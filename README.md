@@ -1,6 +1,6 @@
 # Hash + LSH 语义检索实验
 
-目前仅实现 Phase 1：真实数据准备、查询切分、Embedding 与落盘校验。
+目前已实现 Phase 1（数据准备）与 Phase 2（Exact Hash、全库余弦 Ground Truth）。
 指导文件位于 `docs/EXPERIMENT_GUIDE.md.md`。
 
 ## Windows PowerShell 运行
@@ -62,3 +62,41 @@ Windows 无 symlink 权限时 Hugging Face 可能使用额外磁盘空间，不�
 并用缓存模型重新编码六条抽样文本以核对保存向量。无产物时这两项集成测试明确跳过；
 正式验收要求它们通过。测试收集仅限 `tests/`，避免扫描下载缓存。
 本次实测和遗留事项见 `docs/PHASE1_SUMMARY.md`。
+
+## Phase 2：Exact Hash 与 Ground Truth
+
+```powershell
+.\.venv\Scripts\python.exe -m src.ground_truth --config configs/experiment.yaml --split validation --tau 0.75
+.\.venv\Scripts\python.exe -m pytest -q
+```
+
+`tau` 必须显式指定，`0.75` 仅用于本阶段正确性验证，尚未通过验证集校准。
+默认仅处理验证集。CLI 支持 `--split test`，本阶段不在测试集上执行阈值筛选或调参。
+若目标结果已存在，程序拒绝覆盖；可用 `--output data/ground_truth_another_run` 保存新一次运行。
+无需重新下载模型或生成 Embedding。
+
+- `ExactHashIndex(texts).search(text)` 返回完整原字符串相等的全部历史行 ID，重复文本可对应多个 ID。
+  字典键保留原文，Python 字典在哈希冲突时比较完整字符串，返回前再次核对原文。
+  不做大小写、空白或 Unicode 规范化。不同字符串即使意思接近也不会命中，因此它无法处理语义近似匹配。
+- `BruteForceSearch(X).scores(q)` 对每条历史向量计算真实余弦；`search(q, tau)` 返回全部 `score >= tau` 的 ID。
+  按历史行 ID 升序返回，不做 top-k 截断。即使 Exact 命中，也独立计算全库 Ground Truth。
+  为减少数值误差，以 float64 工作副本归一化并计算，输入文件仍保持 Phase 1 的 float32。
+  极端幅度向量先按行最大绝对值缩放，再求范数；零向量、非有限数值和维度不匹配均拒绝。
+  点积仅裁剪到数学范围 [-1,1]，阈值比较不加 epsilon。后续 LSH 精筛应复用相同数值定义。
+
+在历史文本总长度 T、查询长度 l、命中数 m 下，Exact 建表平均 O(T+N)，索引引用空间 O(N)，
+查询平均 O(l+ml)，字典查桶操作平均 O(1)；极端哈希冲突可退化到 O(Nl+ml)。
+Brute-force 初始化 O(Nd)，工作矩阵 O(Nd)，单次查询 O(Nd)，得分和 ID 额外空间 O(N)。
+批量保存 Q 条完整得分占 O(QN) 空间；这是本阶段便于核验的产物，不是检索索引。
+
+`data/ground_truth/` 保存：
+
+- `validation_tau_0.75.jsonl`：逐查询 ID、类型、Exact 命中、Ground Truth ID 与对应得分。
+- `validation_tau_0.75_scores.npy`：60×10,000 的 float64 全库余弦得分，行序对应验证查询，列序对应历史库。
+- `validation_tau_0.75_manifest.json`：临时阈值、数量、输入/输出校验和、环境、重复运行及落盘检查状态。
+- `phase2.log`：实际运行与失败日志。
+
+测试包含人为制造的哈希碰撞、相同/正交/反向向量、阈值等号、空结果、异常输入和重复查询。
+产物生成后还会检查全部真实得分与独立余弦公式一致、全部 Ground Truth ID 与原始精确匹配结果正确。
+真实 Phase 2 产物缺失时，该集成测试明确跳过；正式验收要求其通过。
+阶段总结见 `docs/PHASE2_SUMMARY.md`。

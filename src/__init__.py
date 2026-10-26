@@ -1,1 +1,1 @@
-"""Hash + LSH experiment: Phase 1 data preparation."""
+"""Hash + LSH experiment: data preparation and exact/full-scan baselines."""
