@@ -1,0 +1,21 @@
+seed: 42
+dataset:
+  name: sentence-transformers/quora-duplicates
+  config: pair
+  split: train
+  revision: 41f699770310302022a4dd75d4cf903bfef9ea46
+  corpus_size: 10000
+  validation_semantic_queries: 50
+  test_semantic_queries: 100
+  validation_exact_queries: 10
+  test_exact_queries: 20
+embedding:
+  model: sentence-transformers/all-MiniLM-L6-v2
+  revision: 1110a243fdf4706b3f48f1d95db1a4f5529b4d41
+  normalize: true
+  dtype: float32
+  dimension: 384
+  batch_size: 64
+  device: cpu
+output: data/processed
+cache: data/raw

@@ -1,0 +1,5 @@
+numpy>=1.26,<3
+PyYAML>=6,<7
+datasets>=3,<6
+sentence-transformers>=3,<7
+pytest>=8,<10
