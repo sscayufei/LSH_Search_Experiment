@@ -45,6 +45,15 @@ def threshold_ids(scores, tau):
     return np.flatnonzero(scores >= tau)
 
 
+def cosine_scores_normalized(vectors, query):
+    """Same row-wise reduction for full-corpus and candidate-only comparisons.
+
+    Inputs are already normalized float64 vectors. Keeping the reduction independent
+    of row count avoids different BLAS kernels changing threshold boundary rounding.
+    """
+    return np.clip(np.einsum("nd,d->n", vectors, query, optimize=False), -1.0, 1.0)
+
+
 class BruteForceSearch:
     """Normalize once, then compute cosine against every corpus row per query."""
 
@@ -58,7 +67,7 @@ class BruteForceSearch:
             raise ValueError("Query must be a vector matching corpus dimension")
         normalized = normalize_rows(query[None, :])[0]
         # Roundoff can place a normalized dot product just outside [-1, 1].
-        return np.clip(self._vectors @ normalized, -1.0, 1.0)
+        return cosine_scores_normalized(self._vectors, normalized)
 
     def search(self, query, tau):
         return threshold_ids(self.scores(query), tau)

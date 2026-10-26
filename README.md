@@ -1,6 +1,6 @@
 # Hash + LSH 语义检索实验
 
-目前已实现 Phase 1（数据准备）与 Phase 2（Exact Hash、全库余弦 Ground Truth）。
+目前已实现 Phase 1（数据准备）、Phase 2（Exact Hash、Ground Truth）与 Phase 3（随机超平面 LSH、混合检索）。
 指导文件位于 `docs/EXPERIMENT_GUIDE.md.md`。
 
 ## Windows PowerShell 运行
@@ -100,3 +100,62 @@ Brute-force 初始化 O(Nd)，工作矩阵 O(Nd)，单次查询 O(Nd)，得分�
 产物生成后还会检查全部真实得分与独立余弦公式一致、全部 Ground Truth ID 与原始精确匹配结果正确。
 真实 Phase 2 产物缺失时，该集成测试明确跳过；正式验收要求其通过。
 阶段总结见 `docs/PHASE2_SUMMARY.md`。
+
+## Phase 3：Random Hyperplane LSH
+
+```powershell
+.\.venv\Scripts\python.exe -m src.validate_lsh --config configs/experiment.yaml --k 12 --L 16 --tau 0.75
+.\.venv\Scripts\python.exe -m pytest -q
+```
+
+`k=12,L=16,tau=0.75` 仅是指导文件建议的初始正确性配置，尚未调优。
+校验命令仅运行 validation，不读取测试查询来选择参数；需要 Phase 2 对应阈值的真实 Ground Truth 文件。
+目标产物已存在时拒绝覆盖，可通过 `--output` 指定新目录。
+
+```python
+from src.random_hyperplane_lsh import RandomHyperplaneLSH, candidate_probability
+from src.retrieval import HybridRetriever
+
+lsh = RandomHyperplaneLSH(k=12, L=16, random_state=42).fit(X)
+C = lsh.candidates(q)
+ids = lsh.search(q, tau=0.75)
+details = lsh.search_with_stats(q, tau=0.75)
+hybrid = HybridRetriever(corpus_texts, lsh)
+result = hybrid.search(query_text, q, tau=0.75)
+# 精确命中时允许 q=None，跳过查询编码及 LSH；此路径 scores=None。
+theoretical_probability = candidate_probability(0.75, k=12, L=16)
+```
+
+每张表使用 k 个独立高斯超平面，`dot >= 0` 记为 1；bit j 权重为 `2**j`。
+签名打包为 Python 整数，支持超过 64 bit。L 张表独立取样；查询始终复用已保存的超平面。
+`signature -> tuple(doc_id)` 桶保持全部历史记录；候选取 L 个桶的并集，去重后按 ID 排序。
+只收集候选向量进行真实余弦比较，严格筛选 `>= tau`；空候选直接返回空集，不回退到全库。
+混合检索先查原文，命中时跳过向量访问和 LSH；未命中才使用上述候选流程。
+
+单 bit 碰撞概率 `p=1-acos(s)/pi`，候选概率理论模型为 `1-(1-p**k)**L`。
+该公式不是实际 Recall；参数选择与网格实验留待 Phase 4。
+
+为让任意候选子集和全库扫描在浮点阈值边界严格一致，Phase 2/3 共享
+`cosine_scores_normalized` 逐行 einsum 点积。历史 float32 产物不变，工作副本仍为 float64。
+旧 Phase 2 完整得分的末位可能与当前逐行计算有微小差异；其全部验证查询 Ground Truth ID
+已核验保持一致，原有得分文件和校验和保持原样。
+
+建索引时间 O(NLkd)，额外索引空间 O(Lkd+NL)，归一化工作矩阵 O(Nd)。
+设读取的桶引用数为 B、去重候选数为 c，查询签名 O(Lkd)，并集平均 O(B)，
+排序 O(c log c)，精筛 O(cd)；候选向量收集临时空间 O(cd)。
+`search_with_stats` 独立记录签名、查桶/去重、精筛时间与候选数、比较次数；
+`fit_stats` 记录建索引与签名阶段时间，`bucket_stats()` 提供每表桶诊断。
+
+`data/lsh_validation/` 包含：
+
+- `hyperplanes.npy`：本次实际使用的 L×k×d 超平面。
+- `tables.json`：每张表的签名桶与全部历史 ID（不使用 pickle）。
+- `bucket_stats.json`：已占用桶、相对全部 `2**k` 签名的空桶比例、最大桶和 ID 引用数。
+- `queries.jsonl`：全部 60 条验证查询的候选、LSH/混合结果、独立 Ground Truth 与阶段耗时/计数。
+- `summary.json`、`phase3.log`：配置、真实诊断、输入/输出及代码 SHA-256、检查状态和日志。
+
+这些时间来自单次正确性运行，不是经过热身/重复测量的性能 benchmark。
+校验器中的全库扫描与重复拟合只用于验收，不属于 LSH 查询路径。
+重启后集成测试会重建索引并与保存的超平面和桶逐项对照，验证每条查询满足 `R=C∩G`。
+真实 Phase 3 产物缺失时这两项集成测试明确跳过；正式验收要求通过。
+本次结果及边界测试修正记录见 `docs/PHASE3_SUMMARY.md`。

@@ -1,1 +1,1 @@
-"""Hash + LSH experiment: data preparation and exact/full-scan baselines."""
+"""Hash + LSH experiment: data, baselines, random hyperplanes and retrieval."""
