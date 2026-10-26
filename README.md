@@ -316,3 +316,22 @@ results/raw 主要新增：
 results/figures/scale_analysis.png 区分实测与虚线预测，scale_diagnostics.png 展示候选比例、大桶和 Recall。
 无关候选数为何可能随 N 近似线性增长、理论数值推导、实测限制和未实现的改进思路见 `docs/PHASE6_SUMMARY.md`。
 本阶段未实现任何可选算法改进，也未提前生成最终 PDF。
+
+## Phase 7：最终报告
+
+最终四页中文 PDF 位于 `output/pdf/experiment_report.pdf`，LaTeX 源文件为
+`report/experiment_report.tex`。内容覆盖两层索引、伪代码、复杂度、验证选型、四项指标、
+三方法对照、规模关系与 300 字以内的最后思考；百万规模明确标记为理论或外推。
+
+复现报告需要 XeLaTeX（ctex/Fandol）、现有 Matplotlib；PDF 检查另需
+`report/requirements.txt` 中的 PyMuPDF、pypdf。执行：
+
+```powershell
+.\.venv\Scripts\python.exe report/build_report.py
+.\.venv\Scripts\python.exe report/check_report.py
+```
+
+构建脚本只读取冻结结果，不运行检索实验，不改变选型。它从原始 CSV 生成两张黑白矢量图和结果表，
+并记录 `report/sources.json` 的 10 个输入校验和。检查脚本核对数值与输入、PDF 页数和内容，
+将四页渲染到 `tmp/pdfs/verified-page-*.png`，随后仍须逐页目视检查。阶段验收记录见
+`docs/PHASE7_SUMMARY.md`。

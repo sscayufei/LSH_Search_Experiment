@@ -1,0 +1,4 @@
+# Reporting and PDF verification only; retrieval dependencies stay unchanged.
+matplotlib==3.11.2
+PyMuPDF==2.0
+pypdf==6.21.2
