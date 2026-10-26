@@ -1,6 +1,6 @@
 # Hash + LSH 语义检索实验
 
-目前已完成 Phase 1–4：数据准备、基准、LSH，以及验证集参数选择与配置锁定。
+目前已完成 Phase 1–5：数据准备、基准、LSH、验证集选参，以及锁定参数后的真实测试集三方法评测。
 指导文件位于 `docs/EXPERIMENT_GUIDE.md.md`。
 
 ## Windows PowerShell 运行
@@ -212,3 +212,55 @@ Recall 是非空 Ground Truth 查询的宏平均；空 Ground Truth 的 Recall �
 
 只有配置与绘图缓存路径为输出之外的例外：锁定 YAML 位于 configs，matplotlib 缓存位于忽略的 results/.matplotlib。
 运行细节、算法复杂度、全网格结果及理论与实测差异见 `docs/PHASE4_SUMMARY.md`。
+
+## Phase 5：测试集三方法评测
+
+```powershell
+.\.venv\Scripts\python.exe -m src.benchmark --config configs/selected_experiment.yaml --split test
+.\.venv\Scripts\python.exe -m pytest -q -p no:cacheprovider --basetemp=data/phase5-test-tmp
+```
+
+使用已锁定的 tau=0.75、k=12、L=32、seed=42，不提供测试时的检索参数覆盖选项。
+启动时先核对 Phase 4 对锁定配置保存的 SHA-256，基准结束后再次核对，配置保持原样。
+锁文件的 `selection.test_evaluation_run=false` 是选参时的历史快照；本次实际测试状态在
+`results/raw/environment.json` 中记录为 true，不修改该快照。
+
+测量设置位于 configs/benchmark.yaml：热身 2 轮、测量 5 轮、底层线程数 1。
+固定种子打乱每轮查询和方法顺序，记录完整实际调用顺序。三种方法使用同一批预编码查询向量，
+计时包围各自公开查询 API，原生结果转储、核验、数据加载/编码、Ground Truth、建索引和内存遍历均不计入查询耗时。
+只实现 `--split test`。默认拒绝覆盖已有 Phase 5 产物；重复实验可指定新的 `--results-dir`，保留首次实测。
+
+本次 100 条语义查询中 95 条 Ground Truth 非空，5 条保留且 Recall 为空；另有 20 条 Exact 查询。
+主语义 Recall 为非空查询宏平均，查询成本统计全部 100 条语义查询。
+额外保存 semantic / exact / all 三种分组；Exact 命中率与余弦相关集合 Recall 分开理解。
+
+| 方法 | Semantic Recall | 平均候选率 | 平均查询 ms | 平均向量比较数 | 额外索引估算 MiB |
+|---|---:|---:|---:|---:|---:|
+| Brute-force | 1.000000 | 100% | 1.989598 | 10,000 | 0 |
+| Exact Hash Only | 0.000000 | 0% | 0.002492 | 0 | 1.381 |
+| Hash + LSH | 0.967665 | 1.5307% | 0.545120 | 153.07 | 24.079 |
+
+本机本次语义查询均值下 Hash + LSH 约快 3.65 倍，向量比较数减少 98.4693%；不表示跨硬件或其他规模仍有相同加速。
+Exact 查询全部命中原文，但 Exact-only 与混合方法在该组的 Recall 均为 0.820833，
+因为提前返回原文 ID 会漏掉其他满足余弦阈值的文本；混合查询整体 Recall 为 0.942129。
+
+内存估算沿用 Phase 4 的唯一对象递归计数：Exact 原文字符串对象作为共享输入排除，
+但原文引用、字典、ID 容器及整数计入索引；混合方法同时计入 Exact 与 LSH，公共对象只计一次。
+Brute-force 额外索引为 0 不代表总内存为 0：其 30,720,000 字节 float64 归一化工作矩阵单列；
+混合方法也有同样大小的工作矩阵。原始历史/测试向量有效载荷、文本文件大小及进程内两份工作矩阵均另列 environment.json。
+这里不是 RSS 或峰值内存。Phase 4 的 22.705 MiB 只含 LSH，本次混合方法 24.079 MiB 另包含 Exact 索引。
+
+新增真实产物位于 results/raw：
+
+- `benchmark_plan.json`：读测试数据前保存的锁定配置哈希与计时设置。
+- `test_queries.csv`：120 条查询的类型、Ground Truth 数与原文匹配信息。
+- `test_ground_truth.jsonl`、`test_scores.npy`：全部查询的独立阈值相关集合和 120×10,000 全库余弦矩阵。
+- `test_results.jsonl`：360 条方法/查询的返回 ID 与候选；暴力搜索以 all_corpus 表示全库候选，不重复写入所有 ID。
+- `test_per_query.csv`：360 行查询指标和五次测量的均值/P50/P95。
+- `test_timings.csv`：1,800 条原始测量及实际调用顺序。
+- `method_summary.csv`：三方法×三个分组的 9 行汇总，组 P50/P95 使用所有原始重复测量。
+- `environment.json`、`phase5_manifest.json`、`phase5.log`：环境/依赖/线程、空间与计时口径、输入/输出及实现代码校验和、日志。
+
+图表位于 results/figures：`method_comparison.png` 展示纯语义查询四项指标，
+`query_group_comparison.png` 展示语义/Exact/混合三组 Recall 和耗时。
+完整设计、边界测试、真实结果和限制见 `docs/PHASE5_SUMMARY.md`。本轮未实施规模分析。

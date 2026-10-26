@@ -1,0 +1,88 @@
+{
+  "phase": 5,
+  "split": "test",
+  "corpus_size": 10000,
+  "query_count": 120,
+  "frozen_config_sha256": "9505a75bc25fba8a5eebe6febc79c62e004cd0263438fde000a15764f7b61b4d",
+  "measurement": {
+    "warmup_rounds": 2,
+    "repeats": 5,
+    "threads": 1,
+    "schedule": "seeded_query_and_method_shuffle"
+  },
+  "checks": {
+    "frozen_config": "passed",
+    "full_ground_truth": "passed",
+    "exact_matches": "passed",
+    "C_intersection_G": "passed",
+    "repeated_results": "passed",
+    "candidate_comparison_counts": "passed"
+  },
+  "inputs": {
+    "configs\\selected_experiment.yaml": "9505a75bc25fba8a5eebe6febc79c62e004cd0263438fde000a15764f7b61b4d",
+    "configs\\benchmark.yaml": "a33e74bd593b31ec7eb63ef8526859ad6d5184be5e279369dcb6f0fe97e5b822",
+    "results\\raw\\phase4_manifest.json": "d793e462cd57dd6faa1c8ea8ebc0caf3fd9b3806c5295e1cc04e3c09b4f4666f",
+    "data\\processed\\manifest.json": "53d0ee5009e02fe1f5139cbd427840dbfd1f9c5b3f889c32e0f8d7fff0d82f42",
+    "data\\processed\\corpus.jsonl": "4cd74bf9d31c66d96670e7d08ae9a87ffebc87adc40a16912edb0371218af452",
+    "data\\processed\\corpus_embeddings.npy": "dca74505f1b38659a4ee66ebcf176427d0c11879bc825ccb3a521fd4096af007",
+    "data\\processed\\test_queries.jsonl": "5f77786379da371ec480b2e49b57cc8229ff7564a930ed6ca52b36be44a7b948",
+    "data\\processed\\test_queries_embeddings.npy": "b68feeeade106fde583d56e7d1d1e1ed325eaad86a51d719a7287163da493db1"
+  },
+  "code_sha256": {
+    "D:\\AI_lab\\homework4\\src\\benchmark.py": "0bece1793c8947a62b89337d59d7c5c422c7a572aa8034e0c8849599eb7da513",
+    "src\\benchmark_metrics.py": "b04db842e5c0f148dd90bd7a99ab482135721de50e198b65e07997ed72eb16a5",
+    "src\\plot_benchmark.py": "2c04d13570c034c4ba038849ea67ba97bbd66207b2ebe48b749278a0e74009e4",
+    "src\\ground_truth.py": "4516c7645375d9c4be4839b7e336c3a7611f0d9e3a5ef540f5092f7b3a6f3d0a",
+    "src\\exact_hash.py": "8a5ffcc2ac77460d77c6f37077fc95a884be4f4c7248c642fcd1c442859df55a",
+    "src\\random_hyperplane_lsh.py": "0f35729dc73f75eb3129bdc280dc268b63482ed42af74294c7652a693f3e160b",
+    "src\\retrieval.py": "892ef9f5bdb6e9060251f99a7d66e713228cbfd1ee30e1ce71b7242ae73f893b",
+    "src\\metrics.py": "079b585575bf1c1aa46b8ccfad0e4f2ede3b2d0f7ec07710d33534faa31c10c8",
+    "src\\tune_parameters.py": "499da0080face75c34466368921f5b5161f990ef4cade97c47f69ed6bd6fcf95"
+  },
+  "outputs": {
+    "results\\raw\\benchmark_plan.json": {
+      "bytes": 482,
+      "sha256": "9ed1e1109a50dec41be0c6bde06cfc6b98d456f43e1fc7af1309eee00848f41f"
+    },
+    "results\\raw\\test_queries.csv": {
+      "bytes": 3772,
+      "sha256": "d63681b5d50aee25d83ba254ff5a9f55c70505087632c55a6cc1556496f5c931"
+    },
+    "results\\raw\\test_per_query.csv": {
+      "bytes": 50872,
+      "sha256": "c84528c9689dc751eb14dd23194adf93723a72756c69aa960ad65189dde1ce76"
+    },
+    "results\\raw\\test_timings.csv": {
+      "bytes": 119412,
+      "sha256": "1fae1aabd2e0c60b0814122f929dec093858665c408f6abb6648186afbf98056"
+    },
+    "results\\raw\\test_results.jsonl": {
+      "bytes": 177013,
+      "sha256": "dad6d53756729940824d820422e59b4a236f7513f6dd34e37d7fa7fce6afe459"
+    },
+    "results\\raw\\test_ground_truth.jsonl": {
+      "bytes": 18723,
+      "sha256": "a8f511278342da70970b4d77e2d92d861d058765915ffeba032369b5a4c68abd"
+    },
+    "results\\raw\\test_scores.npy": {
+      "bytes": 9600128,
+      "sha256": "8392220d8e52122c633b307b033b4596b7c5f208419bf8c3cbfef7c856bb76fa"
+    },
+    "results\\raw\\method_summary.csv": {
+      "bytes": 1974,
+      "sha256": "e871eec712152df5fb63987de589c856c4b0c5d2d606c69162f5ef99000bc564"
+    },
+    "results\\raw\\environment.json": {
+      "bytes": 6075,
+      "sha256": "a6bf22ebe89a977852de679d0f31c0756080661d4e427ffd5c6962fad576c8d9"
+    },
+    "results\\figures\\method_comparison.png": {
+      "bytes": 98206,
+      "sha256": "4136479ede5cf5f264087e85d3bf6743e4430d9b16c4f46a8a7baa629d6cd840"
+    },
+    "results\\figures\\query_group_comparison.png": {
+      "bytes": 55705,
+      "sha256": "e1163a80f9ca687a466dbd3f4474000c43741503fab78b809a660e879ac3087b"
+    }
+  }
+}

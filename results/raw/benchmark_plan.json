@@ -1,0 +1,18 @@
+{
+  "phase": 5,
+  "started_utc": "2026-10-26T10:17:27.018781+00:00",
+  "frozen_config_sha256": "9505a75bc25fba8a5eebe6febc79c62e004cd0263438fde000a15764f7b61b4d",
+  "parameters": {
+    "tau": 0.75,
+    "k": 12,
+    "L": 32,
+    "seed": 42
+  },
+  "measurement": {
+    "warmup_rounds": 2,
+    "repeats": 5,
+    "threads": 1,
+    "schedule": "seeded_query_and_method_shuffle"
+  },
+  "scope": "test only; precomputed embeddings; interleaved seeded query/method order"
+}

@@ -1,0 +1,4 @@
+warmup_rounds: 2
+repeats: 5
+threads: 1
+schedule: seeded_query_and_method_shuffle

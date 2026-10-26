@@ -1,0 +1,10 @@
+2026-10-26 18:17:27,136 INFO Frozen test benchmark: N=10000 Q=120 tau=0.75 k=12 L=32 seed=42
+2026-10-26 18:17:29,887 INFO Measured round 1/5 completed
+2026-10-26 18:17:30,204 INFO Measured round 2/5 completed
+2026-10-26 18:17:30,513 INFO Measured round 3/5 completed
+2026-10-26 18:17:30,815 INFO Measured round 4/5 completed
+2026-10-26 18:17:31,105 INFO Measured round 5/5 completed
+2026-10-26 18:17:36,380 INFO Semantic Brute-force: Recall=1.0 candidate=100.0000% time=1.989598 ms comparisons=10000.00 index=0.000 MiB
+2026-10-26 18:17:36,380 INFO Semantic Exact Hash Only: Recall=0.0 candidate=0.0000% time=0.002492 ms comparisons=0.00 index=1.381 MiB
+2026-10-26 18:17:36,380 INFO Semantic Hash + LSH: Recall=0.9676649958228905 candidate=1.5307% time=0.545120 ms comparisons=153.07 index=24.079 MiB
+2026-10-26 18:17:36,380 INFO Phase 5 completed: 120 queries, 360 per-query rows, 1800 timing samples

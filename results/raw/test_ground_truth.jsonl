@@ -1,0 +1,120 @@
+{"query_id": "test-0000", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [41], "ground_truth_scores": [0.9862341630706561]}
+{"query_id": "test-0001", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [2374], "ground_truth_scores": [0.8143887079036565]}
+{"query_id": "test-0002", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [1373], "ground_truth_scores": [0.9420784854132853]}
+{"query_id": "test-0003", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [4661, 5333, 7843, 8276], "ground_truth_scores": [0.9590523205127253, 0.9659920388799293, 0.8036876809598732, 0.9409860542389734]}
+{"query_id": "test-0004", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [3941], "ground_truth_scores": [0.8554418404210138]}
+{"query_id": "test-0005", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [647, 1182, 5449, 6710, 8469, 8750], "ground_truth_scores": [0.7656029977044716, 0.8163944009377369, 0.7802827138277328, 0.862142247303576, 0.8897580279404513, 0.7794811910250853]}
+{"query_id": "test-0006", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [5578, 8828], "ground_truth_scores": [0.8320621470054597, 0.7873207924182986]}
+{"query_id": "test-0007", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [9992], "ground_truth_scores": [0.9163046764038445]}
+{"query_id": "test-0008", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [1776, 2864, 6455, 8419], "ground_truth_scores": [0.7690994336401397, 0.7952745235963239, 0.9126839115429279, 0.8437108496860733]}
+{"query_id": "test-0009", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [1192], "ground_truth_scores": [0.9673458028023525]}
+{"query_id": "test-0010", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [324, 856, 5896], "ground_truth_scores": [0.8732087148822164, 0.9264656698809535, 0.9208386728722749]}
+{"query_id": "test-0011", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [4853], "ground_truth_scores": [0.9743847972307719]}
+{"query_id": "test-0012", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [16, 739, 2995, 3073, 3272, 3985, 9420, 9543, 9669], "ground_truth_scores": [0.857138941926441, 0.8944158675617095, 0.9708224526492748, 0.8201171791476211, 0.7520738282442717, 0.8406289208095029, 0.8764552016817007, 0.8732948133376682, 0.8908617638180332]}
+{"query_id": "test-0013", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [7400, 7423], "ground_truth_scores": [0.8863883684414999, 0.8097016154284855]}
+{"query_id": "test-0014", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [4957], "ground_truth_scores": [0.8793072832470001]}
+{"query_id": "test-0015", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [4158], "ground_truth_scores": [0.9939491849756843]}
+{"query_id": "test-0016", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [5079], "ground_truth_scores": [0.9818256396885493]}
+{"query_id": "test-0017", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [2681, 6070, 8227, 9178], "ground_truth_scores": [0.8479294456996391, 0.8413342088675395, 0.7598609944547718, 0.7798960042724112]}
+{"query_id": "test-0018", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [855, 1955, 4144, 7056, 8068, 8166], "ground_truth_scores": [0.8120706869869931, 0.8942272343908906, 0.7577694985647725, 0.7652953266895779, 0.8274321742207387, 0.7962603634918155]}
+{"query_id": "test-0019", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [5045, 9664], "ground_truth_scores": [0.8428741578345654, 0.9308136195115313]}
+{"query_id": "test-0020", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [526, 9838], "ground_truth_scores": [0.8985881330492207, 0.8756144270036046]}
+{"query_id": "test-0021", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [3618], "ground_truth_scores": [0.8339830764412335]}
+{"query_id": "test-0022", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [2680, 8664, 9206], "ground_truth_scores": [0.778035423721285, 0.8065414646641299, 0.8414745248405039]}
+{"query_id": "test-0023", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [4440], "ground_truth_scores": [0.8571598586926359]}
+{"query_id": "test-0024", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [9416], "ground_truth_scores": [0.8094476977671299]}
+{"query_id": "test-0025", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [9474], "ground_truth_scores": [0.9986081480744751]}
+{"query_id": "test-0026", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [2936], "ground_truth_scores": [0.8917365142643742]}
+{"query_id": "test-0027", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [4850], "ground_truth_scores": [0.9837869479904369]}
+{"query_id": "test-0028", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [3599], "ground_truth_scores": [0.8330571372976945]}
+{"query_id": "test-0029", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [836, 4123], "ground_truth_scores": [0.8303091371029784, 0.9386266278212341]}
+{"query_id": "test-0030", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [4682], "ground_truth_scores": [0.9802661499894161]}
+{"query_id": "test-0031", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [3319], "ground_truth_scores": [0.904473911033661]}
+{"query_id": "test-0032", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [8065], "ground_truth_scores": [0.8598941589732509]}
+{"query_id": "test-0033", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [7088], "ground_truth_scores": [0.9804796842236663]}
+{"query_id": "test-0034", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [4231], "ground_truth_scores": [0.9416942492175178]}
+{"query_id": "test-0035", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [981, 2458, 4178, 5996, 6182], "ground_truth_scores": [0.7541858984780594, 0.7689951335519755, 0.8627271168396088, 0.7884674647458155, 0.7937861900460482]}
+{"query_id": "test-0036", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [3130], "ground_truth_scores": [0.9023791829533361]}
+{"query_id": "test-0037", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [3650], "ground_truth_scores": [0.9095030615137792]}
+{"query_id": "test-0038", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [871, 2111, 3804, 6144, 7896, 9615, 9729], "ground_truth_scores": [0.7738671567689035, 0.8031197121834653, 0.8425593465747374, 0.7538827685745499, 0.9453465970531414, 0.7768433030479089, 0.9355700330294784]}
+{"query_id": "test-0039", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [863, 8604], "ground_truth_scores": [0.9079248446739703, 0.8693068911947428]}
+{"query_id": "test-0040", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [2080, 2163, 3123, 3201, 3619, 4936, 6214, 7005, 9382], "ground_truth_scores": [0.8858627097139036, 0.7962855042706691, 0.8835878203112136, 0.9188723899720186, 0.817761503917902, 0.7741639552730092, 0.9309159258474022, 0.9006801081436142, 0.9492872407350497]}
+{"query_id": "test-0041", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [1520, 2953, 7308], "ground_truth_scores": [0.9286007464356564, 0.8970156519361272, 0.8369588629246487]}
+{"query_id": "test-0042", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [9187], "ground_truth_scores": [0.9629761248623143]}
+{"query_id": "test-0043", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [8030], "ground_truth_scores": [0.7752174938536239]}
+{"query_id": "test-0044", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [4497], "ground_truth_scores": [0.9071024707438615]}
+{"query_id": "test-0045", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [4454], "ground_truth_scores": [0.8558048958940663]}
+{"query_id": "test-0046", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [4183], "ground_truth_scores": [0.9412880751243756]}
+{"query_id": "test-0047", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [8755], "ground_truth_scores": [0.952372905914993]}
+{"query_id": "test-0048", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [2128, 8635], "ground_truth_scores": [0.7585965177453298, 0.8487218654699482]}
+{"query_id": "test-0049", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [9195], "ground_truth_scores": [0.9761737410020779]}
+{"query_id": "test-0050", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [4259, 8609], "ground_truth_scores": [0.9365154438172714, 0.8603401740855185]}
+{"query_id": "test-0051", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [7679], "ground_truth_scores": [0.8118676088997219]}
+{"query_id": "test-0052", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [2106], "ground_truth_scores": [0.9566195727013649]}
+{"query_id": "test-0053", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [227, 5754], "ground_truth_scores": [0.772329546006006, 0.7552052406298166]}
+{"query_id": "test-0054", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [8940], "ground_truth_scores": [0.9893442053408317]}
+{"query_id": "test-0055", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [3313], "ground_truth_scores": [0.7611190249306303]}
+{"query_id": "test-0056", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [491, 2913, 4924], "ground_truth_scores": [0.8402197692903695, 0.9169635283914302, 0.8408874295718518]}
+{"query_id": "test-0057", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [5607], "ground_truth_scores": [0.9641997893373246]}
+{"query_id": "test-0058", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [517], "ground_truth_scores": [0.9741332039985822]}
+{"query_id": "test-0059", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [367], "ground_truth_scores": [0.9839791330310352]}
+{"query_id": "test-0060", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [2458, 4012, 5996, 6379], "ground_truth_scores": [0.7659729663607548, 0.8121888446129476, 0.7613820257730659, 0.8018043603430975]}
+{"query_id": "test-0061", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [7012, 8318], "ground_truth_scores": [0.9238855108645465, 0.7613917336268907]}
+{"query_id": "test-0062", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [2260, 2491, 5573], "ground_truth_scores": [0.8229433836844696, 0.7890162713137354, 0.8882653619991582]}
+{"query_id": "test-0063", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [9326], "ground_truth_scores": [0.8992670709007429]}
+{"query_id": "test-0064", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [4788, 5030, 9017], "ground_truth_scores": [0.8123193022994906, 0.8171762426422193, 0.8880980105923392]}
+{"query_id": "test-0065", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [9381], "ground_truth_scores": [0.9261766293522387]}
+{"query_id": "test-0066", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [5353], "ground_truth_scores": [0.9607205120030166]}
+{"query_id": "test-0067", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [5681, 6535, 9095], "ground_truth_scores": [0.7650565869434387, 0.9389551065311693, 0.7762904910081603]}
+{"query_id": "test-0068", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [861, 5422, 6061, 6679, 7760, 8304, 8687, 9594], "ground_truth_scores": [0.7788267139672915, 0.7534089796869865, 0.8450520397854371, 0.7944588558129823, 0.9214849586103686, 0.8928704372685106, 0.7637583618230401, 0.7796450104644592]}
+{"query_id": "test-0069", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [930, 2503, 4530, 5558, 6498, 6605, 8605], "ground_truth_scores": [0.7587319294149424, 0.8486980133206992, 0.8119537067293425, 0.9463371576084258, 0.9367283597277751, 0.8853502168750771, 0.9888256028954876]}
+{"query_id": "test-0070", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [2730], "ground_truth_scores": [0.8992750136706196]}
+{"query_id": "test-0071", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [5319], "ground_truth_scores": [0.8214099775465262]}
+{"query_id": "test-0072", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [5020], "ground_truth_scores": [0.8731583562803161]}
+{"query_id": "test-0073", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [827], "ground_truth_scores": [0.8335446996119407]}
+{"query_id": "test-0074", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [1715], "ground_truth_scores": [0.8807358725237944]}
+{"query_id": "test-0075", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [2860], "ground_truth_scores": [0.9500204011829478]}
+{"query_id": "test-0076", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [8756], "ground_truth_scores": [0.8847594374919121]}
+{"query_id": "test-0077", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [4661, 5827, 8276], "ground_truth_scores": [0.793369172561979, 0.762777622057536, 0.8079225715775695]}
+{"query_id": "test-0078", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [8269], "ground_truth_scores": [0.8816892477564284]}
+{"query_id": "test-0079", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [1418], "ground_truth_scores": [0.8741225203117631]}
+{"query_id": "test-0080", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [774], "ground_truth_scores": [0.8411371492163378]}
+{"query_id": "test-0081", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [3024, 3373, 4532, 6428, 8573], "ground_truth_scores": [0.774068279535874, 0.8998395443747362, 0.8613563361414736, 0.7649513818303775, 0.9105957905446465]}
+{"query_id": "test-0082", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [3367, 4869, 7610], "ground_truth_scores": [0.9418954912325219, 0.9030928583225399, 0.7893149468230616]}
+{"query_id": "test-0083", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [1351], "ground_truth_scores": [0.977668918569476]}
+{"query_id": "test-0084", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [8028], "ground_truth_scores": [0.7519077132861065]}
+{"query_id": "test-0085", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [992], "ground_truth_scores": [0.9731014192781442]}
+{"query_id": "test-0086", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [2660], "ground_truth_scores": [0.9841228262834314]}
+{"query_id": "test-0087", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [9492], "ground_truth_scores": [0.8372081292698677]}
+{"query_id": "test-0088", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [], "ground_truth_scores": []}
+{"query_id": "test-0089", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [3097], "ground_truth_scores": [0.9204719150284306]}
+{"query_id": "test-0090", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [5615], "ground_truth_scores": [0.9707077637911954]}
+{"query_id": "test-0091", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [], "ground_truth_scores": []}
+{"query_id": "test-0092", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [], "ground_truth_scores": []}
+{"query_id": "test-0093", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [347, 1613, 3560, 7317, 8918, 9144], "ground_truth_scores": [0.936946580932704, 0.8208586191554413, 0.8438475767340139, 0.7670399952547455, 0.768873773859184, 0.7648617812801086]}
+{"query_id": "test-0094", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [], "ground_truth_scores": []}
+{"query_id": "test-0095", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [2274, 3957, 4722, 5740, 6829], "ground_truth_scores": [0.9082467045960292, 0.8396792938160326, 0.7844526782143073, 0.774502957552083, 0.7644702022339651]}
+{"query_id": "test-0096", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [3236, 3439, 6676, 9499, 9913], "ground_truth_scores": [0.7626389494512383, 0.9670198749696586, 0.772532832539586, 0.7778018611892247, 0.8355645400747927]}
+{"query_id": "test-0097", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [7229], "ground_truth_scores": [0.8740602188571123]}
+{"query_id": "test-0098", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [], "ground_truth_scores": []}
+{"query_id": "test-0099", "kind": "semantic", "tau": 0.75, "ground_truth_ids": [4327, 9619], "ground_truth_scores": [0.7604995495180656, 0.806058694140231]}
+{"query_id": "test-0100", "kind": "exact", "tau": 0.75, "ground_truth_ids": [4214], "ground_truth_scores": [0.9999999999998943]}
+{"query_id": "test-0101", "kind": "exact", "tau": 0.75, "ground_truth_ids": [323], "ground_truth_scores": [0.9999999999999134]}
+{"query_id": "test-0102", "kind": "exact", "tau": 0.75, "ground_truth_ids": [5006], "ground_truth_scores": [0.9999999999999216]}
+{"query_id": "test-0103", "kind": "exact", "tau": 0.75, "ground_truth_ids": [4538], "ground_truth_scores": [0.9999999999998848]}
+{"query_id": "test-0104", "kind": "exact", "tau": 0.75, "ground_truth_ids": [7012], "ground_truth_scores": [0.9999999999998925]}
+{"query_id": "test-0105", "kind": "exact", "tau": 0.75, "ground_truth_ids": [4286], "ground_truth_scores": [1.0]}
+{"query_id": "test-0106", "kind": "exact", "tau": 0.75, "ground_truth_ids": [6565], "ground_truth_scores": [0.9999999999999064]}
+{"query_id": "test-0107", "kind": "exact", "tau": 0.75, "ground_truth_ids": [494, 3689, 3749, 9289], "ground_truth_scores": [0.8454741726317798, 0.8533093004488363, 0.999999999999918, 0.785917276473194]}
+{"query_id": "test-0108", "kind": "exact", "tau": 0.75, "ground_truth_ids": [8155, 8704], "ground_truth_scores": [0.774398460699558, 0.9999999999999025]}
+{"query_id": "test-0109", "kind": "exact", "tau": 0.75, "ground_truth_ids": [9452], "ground_truth_scores": [0.9999999999998966]}
+{"query_id": "test-0110", "kind": "exact", "tau": 0.75, "ground_truth_ids": [8467, 9164], "ground_truth_scores": [0.7720150667870653, 1.0]}
+{"query_id": "test-0111", "kind": "exact", "tau": 0.75, "ground_truth_ids": [748, 1860, 9493], "ground_truth_scores": [0.9958901756367122, 0.8981678367561217, 0.9999999999999143]}
+{"query_id": "test-0112", "kind": "exact", "tau": 0.75, "ground_truth_ids": [2482], "ground_truth_scores": [0.9999999999999998]}
+{"query_id": "test-0113", "kind": "exact", "tau": 0.75, "ground_truth_ids": [2308], "ground_truth_scores": [0.9999999999999116]}
+{"query_id": "test-0114", "kind": "exact", "tau": 0.75, "ground_truth_ids": [8476], "ground_truth_scores": [0.9999999999999996]}
+{"query_id": "test-0115", "kind": "exact", "tau": 0.75, "ground_truth_ids": [4479, 5056], "ground_truth_scores": [0.8066646518805678, 0.9999999999999998]}
+{"query_id": "test-0116", "kind": "exact", "tau": 0.75, "ground_truth_ids": [26, 630, 2612], "ground_truth_scores": [0.7842650712588278, 1.0, 0.7516663451638772]}
+{"query_id": "test-0117", "kind": "exact", "tau": 0.75, "ground_truth_ids": [1075], "ground_truth_scores": [0.9999999999999085]}
+{"query_id": "test-0118", "kind": "exact", "tau": 0.75, "ground_truth_ids": [5043], "ground_truth_scores": [0.9999999999999999]}
+{"query_id": "test-0119", "kind": "exact", "tau": 0.75, "ground_truth_ids": [4206], "ground_truth_scores": [1.0]}

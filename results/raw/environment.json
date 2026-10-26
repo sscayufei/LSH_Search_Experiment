@@ -1,0 +1,185 @@
+{
+  "phase": 5,
+  "split": "test",
+  "started_utc": "2026-10-26T10:17:27.018781+00:00",
+  "finished_utc": "2026-10-26T10:17:33.609610+00:00",
+  "frozen_config": {
+    "seed": 42,
+    "dataset": {
+      "name": "sentence-transformers/quora-duplicates",
+      "config": "pair",
+      "split": "train",
+      "revision": "41f699770310302022a4dd75d4cf903bfef9ea46",
+      "corpus_size": 10000,
+      "validation_semantic_queries": 50,
+      "test_semantic_queries": 100,
+      "validation_exact_queries": 10,
+      "test_exact_queries": 20
+    },
+    "embedding": {
+      "model": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "normalize": true,
+      "dtype": "float32",
+      "dimension": 384,
+      "batch_size": 64,
+      "device": "cpu"
+    },
+    "output": "data/processed",
+    "cache": "data/raw",
+    "retrieval": {
+      "tau": 0.75,
+      "k": 12,
+      "L": 32
+    },
+    "selection": {
+      "phase": 4,
+      "split": "validation",
+      "frozen_utc": "2026-10-26T09:07:44.910417+00:00",
+      "test_evaluation_run": false,
+      "grid_sha256": "3282d962cb6c2cee57f59050d03df1b53240c11fe753c8f9ec7de0427e2cb093",
+      "threshold_analysis_sha256": "17fe6401cd78001690d8981c39e99c09d061bffcfd292aaa1a53cb882484ff5a",
+      "policy_sha256": "05761fe5d1b90cce2be91e53b02254808814ea0836c5c6566b9ec694b2d93853",
+      "budget_satisfied": true,
+      "validation_recall_goal_met": true
+    }
+  },
+  "config_sha256_before": "9505a75bc25fba8a5eebe6febc79c62e004cd0263438fde000a15764f7b61b4d",
+  "config_sha256_after": "9505a75bc25fba8a5eebe6febc79c62e004cd0263438fde000a15764f7b61b4d",
+  "test_evaluation_run": true,
+  "measurement": {
+    "warmup_rounds": 2,
+    "repeats": 5,
+    "threads": 1,
+    "schedule": "seeded_query_and_method_shuffle"
+  },
+  "threadpools": [
+    {
+      "user_api": "blas",
+      "internal_api": "openblas",
+      "num_threads": 1,
+      "prefix": "libscipy_openblas",
+      "filepath": "D:\\AI_lab\\homework4\\.venv\\Lib\\site-packages\\numpy.libs\\libscipy_openblas64_-ed4f167a5330424524f45258e7ca2c8d.dll",
+      "version": "0.3.34.106.0",
+      "threading_layer": "pthreads",
+      "architecture": "Haswell"
+    }
+  ],
+  "python": "3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "packages": {
+    "aiohappyeyeballs": "2.7.1",
+    "aiohttp": "3.14.5",
+    "aiosignal": "1.4.0",
+    "annotated-doc": "0.0.5",
+    "anyio": "4.15.1",
+    "attrs": "26.1.0",
+    "click": "8.5.0",
+    "cloudpickle": "3.1.2",
+    "colorama": "0.4.6",
+    "contourpy": "1.4.0",
+    "cycler": "0.12.1",
+    "datasets": "5.1.0",
+    "dill": "0.4.1",
+    "filelock": "4.2.4",
+    "fonttools": "4.67.0",
+    "frozenlist": "1.8.0",
+    "fsspec": "2026.7.0",
+    "h11": "0.16.0",
+    "hf-xet": "1.7.0",
+    "httpcore2": "2.16.0",
+    "httpx2": "2.16.0",
+    "huggingface_hub": "2.3.0",
+    "idna": "3.20",
+    "iniconfig": "2.3.1",
+    "Jinja2": "3.1.6",
+    "joblib": "1.6.0",
+    "kiwisolver": "1.5.1",
+    "markdown-it-py": "4.2.0",
+    "MarkupSafe": "3.0.4",
+    "matplotlib": "3.11.2",
+    "mdurl": "0.1.2",
+    "mpmath": "1.3.0",
+    "multidict": "7.2.1",
+    "multiprocess": "0.70.19",
+    "narwhals": "2.27.1",
+    "networkx": "3.7",
+    "numpy": "2.5.4",
+    "packaging": "26.3",
+    "pandas": "3.1.0",
+    "pillow": "13.0.0",
+    "pip": "24.2",
+    "pluggy": "1.7.0",
+    "propcache": "0.5.4",
+    "pyarrow": "26.0.0",
+    "Pygments": "2.21.0",
+    "pyparsing": "3.3.3",
+    "pytest": "9.1.1",
+    "python-dateutil": "3.0.0",
+    "PyYAML": "6.0.3",
+    "regex": "2026.9.29",
+    "rich": "15.0.0",
+    "safetensors": "0.8.0",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1",
+    "sentence-transformers": "6.2.0",
+    "setuptools": "84.2.1",
+    "shellingham": "1.5.4",
+    "six": "1.17.0",
+    "sympy": "1.14.0",
+    "threadpoolctl": "3.7.0",
+    "tokenizers": "0.23.3",
+    "torch": "2.14.1",
+    "tqdm": "4.70.1",
+    "transformers": "5.20.2",
+    "truststore": "0.10.5",
+    "typer": "0.27.3",
+    "typing_extensions": "4.16.0",
+    "tzdata": "2026.5",
+    "xxhash": "4.0.2",
+    "yarl": "1.25.1"
+  },
+  "phase1_verification": {
+    "status": "passed",
+    "rows": {
+      "corpus": 10000,
+      "validation_queries": 60,
+      "test_queries": 120
+    },
+    "max_norm_error": {
+      "corpus": 1.1920928955078125e-07,
+      "validation_queries": 1.1920928955078125e-07,
+      "test_queries": 1.1920928955078125e-07
+    }
+  },
+  "resources": {
+    "Brute-force": {
+      "index_bytes": 0,
+      "build_seconds": 0.04162599996197969
+    },
+    "Exact Hash Only": {
+      "index_bytes": 1447656,
+      "build_seconds": 0.0022401000605896115
+    },
+    "Hash + LSH": {
+      "index_bytes": 25248744,
+      "build_seconds": 0.5940906999167055
+    }
+  },
+  "shared_storage": {
+    "raw_corpus_vectors_bytes": 15360000,
+    "raw_test_vectors_bytes": 184320,
+    "corpus_jsonl_bytes": 814866,
+    "test_queries_jsonl_bytes": 19237,
+    "normalized_corpus_workspace_bytes_by_method": {
+      "Brute-force": 30720000,
+      "Exact Hash Only": 0,
+      "Hash + LSH": 30720000
+    },
+    "actual_vector_workspace_bytes_in_benchmark_process": 61440000,
+    "lsh_component_index_bytes": 23808284
+  },
+  "memory_definition": "Unique reachable object sizes; planes, buckets, keys, ID containers/integers. Exact raw string objects excluded as shared inputs. Corpus working matrices reported separately. Not RSS or peak memory.",
+  "timing_definition": "External perf_counter around each method public API, native result conversion/verification excluded; precomputed embeddings; warmups excluded; group percentiles use all raw repeated samples.",
+  "count_definition": "Brute-force=N vector comparisons; exact-only=0; hybrid=deduplicated candidate count on semantic route and 0 on exact route; algorithm-derived counts, not CPU instructions."
+}
