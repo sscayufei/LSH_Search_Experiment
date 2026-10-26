@@ -1,6 +1,6 @@
 # Hash + LSH 语义检索实验
 
-目前已完成 Phase 1–5：数据准备、基准、LSH、验证集选参，以及锁定参数后的真实测试集三方法评测。
+目前已完成 Phase 1–6，包括锁定参数后的真实测试评测、嵌套数据规模实验与明确标记的百万级预测。
 指导文件位于 `docs/EXPERIMENT_GUIDE.md.md`。
 
 ## Windows PowerShell 运行
@@ -263,4 +263,56 @@ Brute-force 额外索引为 0 不代表总内存为 0：其 30,720,000 字节 fl
 
 图表位于 results/figures：`method_comparison.png` 展示纯语义查询四项指标，
 `query_group_comparison.png` 展示语义/Exact/混合三组 Recall 和耗时。
-完整设计、边界测试、真实结果和限制见 `docs/PHASE5_SUMMARY.md`。本轮未实施规模分析。
+完整设计、边界测试、真实结果和限制见 `docs/PHASE5_SUMMARY.md`。Phase 5 不包含规模分析，后续 Phase 6 见下节。
+
+## Phase 6：固定参数的数据规模分析
+
+```powershell
+.\.venv\Scripts\python.exe -m src.prepare_scale_data
+.\.venv\Scripts\python.exe -m src.prepare_scale_data --verify-only
+.\.venv\Scripts\python.exe -m src.scale_analysis
+.\.venv\Scripts\python.exe -m src.render_scale
+.\.venv\Scripts\python.exe -m pytest -q -p no:cacheprovider --basetemp=data/phase6-test-tmp
+```
+
+前三条准备/测量命令已真实执行，默认拒绝覆盖已有产物。扩容数据在 data/scale，规模配置在 configs/scale.yaml。
+重建可给 prepare_scale_data 指定新的 `--output`，然后给 scale_analysis 传对应 `--scale-dir` 和新的 `--results-dir`。
+render_scale 只从已保存数据重绘图表并记录追溯，不重跑测量、不改数值。
+
+沿用 tau=0.75、k=12、L=32、seed=42 和同一批 100 条语义测试查询。
+保留原 10,000 条文本/向量/ID 为原样前缀，从缓存 Quora anchor/positive 合集中去重采样扩展至 100,000 条，
+排除所有验证/测试查询文本进入新增记录；50,000 和 100,000 是同一序列的嵌套前缀。
+新增 90,000 条使用同一 commit 的缓存 MiniLM 在 CPU 上真实编码，不下载、不训练、不生成随机替代向量。
+原始唯一 anchor 只有 86,169 条，扩展使用两列合集，因此记录了相较 anchor-only 基库的分布变化限制。
+
+每个规模在单独进程依次运行：先计算该全库的 Ground Truth，释放暴力工作矩阵，再构建同一混合索引。
+超平面在各规模间哈希完全相同；每个查询的旧候选/相关集合均为新集合的子集。
+热身 2 轮、测量 5 轮、单线程；额外索引使用 Phase 5 的相同对象估算口径，归一化工作矩阵单列。
+
+| 实测 N | 平均候选数 | 平均候选率 | 平均耗时 ms | 混合索引 MiB |
+|---:|---:|---:|---:|---:|
+| 10,000 | 153.07 | 1.5307% | 0.402249 | 24.079 |
+| 50,000 | 761.41 | 1.52282% | 1.565066 | 76.187 |
+| 100,000 | 1,524.16 | 1.52416% | 2.557436 | 139.005 |
+
+平均低于余弦阈值的候选为 151.20 / 756.09 / 1,514.93，最大桶为 48 / 189 / 360。
+候选数量近似随 N 增长、候选比例近似稳定；实际时延和内存无需严格按同一倍数增长。
+各规模的 Ground Truth 会增长，非空查询数 95 / 98 / 98，条件 Recall 为 0.967665 / 0.955081 / 0.936461。
+这些是本阶段新测量的时延，未覆盖 Phase 5 的首次三方法计时。
+
+**没有实测 1,000,000 条。** 当前缓存仅支持 149,446 条符合排除规则的唯一文本；资源预检约剩 3.03 GiB 物理内存。
+百万级仅 float32 原始向量就需 1.536 GB，当前 float64 工作矩阵另需 3.072 GB，尚未计索引。
+结果分别存为 measured、conditional_theory、extrapolated_from_measured_10k、arithmetic_storage_formula，绝不混称实测。
+
+results/raw 主要新增：
+
+- `scale_resource_preflight.json`、`scale_plan.json`：真实资源检查与预定规模/配置。
+- `scale_summary.csv`：三组真实规模结果。
+- `scale_n10000/`、`scale_n50000/`、`scale_n100000/`：各 100 行查询指标、500 条计时、候选/结果/Ground Truth ID、桶统计和校验和。
+- `scale_predictions.csv`：条件理论、10k 比例外推和向量存储算式，包括 10^4、10^5、10^6；没有预测时延或冒充实际索引内存。
+- `scale_manifest.json`：固定参数、共同超平面、嵌套关系、输入/输出/代码追溯和重绘记录。
+- `scale_analysis.log`：三个独立工作进程的真实日志。
+
+results/figures/scale_analysis.png 区分实测与虚线预测，scale_diagnostics.png 展示候选比例、大桶和 Recall。
+无关候选数为何可能随 N 近似线性增长、理论数值推导、实测限制和未实现的改进思路见 `docs/PHASE6_SUMMARY.md`。
+本阶段未实现任何可选算法改进，也未提前生成最终 PDF。

@@ -1,0 +1,13 @@
+{
+  "phase": 6,
+  "observed_during": "initial Phase 6 preflight on 2026-10-26 Asia/Hong_Kong",
+  "source": "approved read-only Win32_OperatingSystem CIM query and shutil.disk_usage",
+  "total_visible_memory_KiB": 16494840,
+  "free_physical_memory_KiB": 3175952,
+  "disk_free_GiB_rounded": 70.07,
+  "cached_dataset_rows": 149263,
+  "unique_anchors": 86169,
+  "unique_anchor_positive_union": 149596,
+  "eligible_union_including_retained_base": 149446,
+  "decision": "Measure nested 10000, 50000, 100000 sequentially in separate processes; million-scale predictions only. Cached unique texts do not support a million genuine distinct records, and million-scale working vectors plus Python index exceed current free memory."
+}

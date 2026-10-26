@@ -1,0 +1,162 @@
+{
+  "phase": 6,
+  "config_sha256": "9505a75bc25fba8a5eebe6febc79c62e004cd0263438fde000a15764f7b61b4d",
+  "measured_sizes": [
+    10000,
+    50000,
+    100000
+  ],
+  "prediction_sizes": [
+    10000,
+    100000,
+    1000000
+  ],
+  "million_size_measured": false,
+  "parameters": {
+    "tau": 0.75,
+    "k": 12,
+    "L": 32,
+    "seed": 42
+  },
+  "checks": {
+    "real_embeddings": "passed",
+    "same_hyperplanes": "passed",
+    "same_queries": "passed",
+    "nested_candidates": "passed",
+    "nested_ground_truth": "passed",
+    "C_intersection_G": "passed",
+    "frozen_parameters": "passed"
+  },
+  "distribution_caveat": "The base is anchor-only; extension draws from both columns. Nested growth is reproducible but is not an isolated causal test of N under identical text distributions.",
+  "python": "3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "measurement_scope": "repeated precomputed-query hybrid API; GT, build, memory traversal and embedding excluded; index memory is a unique-object estimate",
+  "inputs": {
+    "configs\\selected_experiment.yaml": "9505a75bc25fba8a5eebe6febc79c62e004cd0263438fde000a15764f7b61b4d",
+    "configs\\scale.yaml": "5edaabd0cafac6ddcc70479e0ba73b657a960f7ffe18aabb651f137238da73bb",
+    "data\\scale\\manifest.json": "fe2d6a8820723b4c444ac94378719cd99c25d6e85a0a3b067be7f806eb221e5a",
+    "results\\raw\\phase5_manifest.json": "c676c9c6cfdb39b96ad2b8c6f60ddabdc45583ba311d0312d7cec09519a311ce",
+    "results\\raw\\scale_resource_preflight.json": "85db7cd83c1448a0f9d40e131484a7ece279fc1eddada5708dfa296c6648bcd1"
+  },
+  "code_sha256": {
+    "D:\\AI_lab\\homework4\\src\\scale_analysis.py": "24b7118ae738c7ab5a095b72192ecbd6cdb158224883621ebc58973734953c27",
+    "src\\plot_scale.py": "b4feaf2179535d1cafecfce161d6062733f4dfdb2eb9b82672bb730f5a0b0718",
+    "src\\prepare_scale_data.py": "4158619115866fb6aab36ae43d04ad21d5da1709b62e7850f40083853260c594",
+    "src\\random_hyperplane_lsh.py": "0f35729dc73f75eb3129bdc280dc268b63482ed42af74294c7652a693f3e160b",
+    "src\\ground_truth.py": "4516c7645375d9c4be4839b7e336c3a7611f0d9e3a5ef540f5092f7b3a6f3d0a",
+    "src\\retrieval.py": "892ef9f5bdb6e9060251f99a7d66e713228cbfd1ee30e1ce71b7242ae73f893b",
+    "src\\benchmark.py": "0bece1793c8947a62b89337d59d7c5c422c7a572aa8034e0c8849599eb7da513",
+    "src\\tune_parameters.py": "499da0080face75c34466368921f5b5161f990ef4cade97c47f69ed6bd6fcf95",
+    "D:\\AI_lab\\homework4\\src\\render_scale.py": "fa8ff0d6bd70562676402f520e8290cf87c94dea2bde74fd76c9d876e73c1eb0"
+  },
+  "outputs": {
+    "results\\raw\\scale_plan.json": {
+      "bytes": 894,
+      "sha256": "d8761de60efdacbdec34e326226e6ed550c3ec6ff44a8ada5ff8230c0e921412"
+    },
+    "results\\raw\\scale_summary.csv": {
+      "bytes": 1207,
+      "sha256": "29e96090ceb1fe5fae362870ddd879d49ecc9a03f9bf069c75c17237b9b2f4f3"
+    },
+    "results\\raw\\scale_predictions.csv": {
+      "bytes": 3308,
+      "sha256": "8e32c87749c28cbace2742e504b4a8f396390e2108a7d3874b91d376a4d615ea"
+    },
+    "results\\raw\\scale_n10000\\bucket_stats.json": {
+      "bytes": 7750,
+      "sha256": "4a5751605c728e3bfb34a0803b2c49747b15fd341acc8842d6df88275629fd9a"
+    },
+    "results\\raw\\scale_n10000\\manifest.json": {
+      "bytes": 1977,
+      "sha256": "435c3faf650ca674783511a3437e8ad746cd1ee77344fd27662b590280f2de48"
+    },
+    "results\\raw\\scale_n10000\\per_query.csv": {
+      "bytes": 9338,
+      "sha256": "c365ccf857176a84e93a77e41a2195d074bc4de6716a0847adf9492f2beae2c2"
+    },
+    "results\\raw\\scale_n10000\\results.jsonl": {
+      "bytes": 100869,
+      "sha256": "6d2be4eeb6157102e0de407c303c139320667e6df884efd6878fa95ba34f55a8"
+    },
+    "results\\raw\\scale_n10000\\summary.json": {
+      "bytes": 809,
+      "sha256": "96de6eb647eb07c0c92cfb75f8656ff6a744d5d2913029e74c06c9c1a14bc75e"
+    },
+    "results\\raw\\scale_n10000\\timings.csv": {
+      "bytes": 27567,
+      "sha256": "3f32a529b2a65a534283865333ea519e05dc985e4c6a3438c5f665c8bad170ff"
+    },
+    "results\\raw\\scale_n50000\\bucket_stats.json": {
+      "bytes": 7785,
+      "sha256": "acb46e1b6835a2c19eafbdee995b220a8ff4eee4055ab53f8f851580c6da3a99"
+    },
+    "results\\raw\\scale_n50000\\manifest.json": {
+      "bytes": 1977,
+      "sha256": "4d9e5dd27f3c1f1d8ab980d994dff85383b25cc27422c9da08b91a178d434a43"
+    },
+    "results\\raw\\scale_n50000\\per_query.csv": {
+      "bytes": 9605,
+      "sha256": "68941d4db19c934ef7db10e934c5158f396fc1779f365bf711428a0957acd412"
+    },
+    "results\\raw\\scale_n50000\\results.jsonl": {
+      "bytes": 531777,
+      "sha256": "c4fb4e8972e3cadd9e16514e7b7dfdf96bdca22a2440a51fc4f980ef45c14d22"
+    },
+    "results\\raw\\scale_n50000\\summary.json": {
+      "bytes": 799,
+      "sha256": "7e0d42b41d8d32bab969271412f8608152e3cbb57ed059c44ae21b69b0f334fa"
+    },
+    "results\\raw\\scale_n50000\\timings.csv": {
+      "bytes": 27357,
+      "sha256": "cff28c0c4ce800c839c03bfe770564c7d7d3cd99a0fdce808b67a6cd3f4de1b3"
+    },
+    "results\\raw\\scale_n100000\\bucket_stats.json": {
+      "bytes": 7832,
+      "sha256": "dc0f03f22553e0139c89612497da27f332c7bb4426de73cc258a39ba1381556b"
+    },
+    "results\\raw\\scale_n100000\\manifest.json": {
+      "bytes": 1980,
+      "sha256": "5eb0b7f291acfdf322edc9546746736f690beedef4a69f9f77a106307bc4ee74"
+    },
+    "results\\raw\\scale_n100000\\per_query.csv": {
+      "bytes": 10072,
+      "sha256": "a08b9805af89d42d97265f6bdecc158cdb01c773b3a3f6dd40cccab4f7f30540"
+    },
+    "results\\raw\\scale_n100000\\results.jsonl": {
+      "bytes": 1071463,
+      "sha256": "454b7a07419acec220735897e4ba9773eb8f9e364fbfb65db05a9e4e47a25bc4"
+    },
+    "results\\raw\\scale_n100000\\summary.json": {
+      "bytes": 808,
+      "sha256": "77dc13106c7b374281367d42548455bdd9f48b97ab3d1d0e71b712536ebcff3a"
+    },
+    "results\\raw\\scale_n100000\\timings.csv": {
+      "bytes": 28183,
+      "sha256": "371ea442cc4051f6e4a2cb827d8db5bfca58a9038e6b4bfe6236ac2b76548429"
+    },
+    "results\\figures\\scale_analysis.png": {
+      "bytes": 196244,
+      "sha256": "d967592feaa297613efab0037b7c46d55e928b5a15c14f0c32696a1750b23f0f"
+    },
+    "results\\figures\\scale_diagnostics.png": {
+      "bytes": 86466,
+      "sha256": "97f1e27b8e2b9ca7a1189db217f7605e58cee6d4a7bd6d58897f764f977d5938"
+    }
+  },
+  "render_only_update": {
+    "utc": "2026-10-26T10:48:09.404914+00:00",
+    "reason": "place endpoint labels inside the diagnostic axes",
+    "previous_plot_code_sha256": "0f79ba1e3573f0997076102004c92481e1d36e9873727efecea8b9743604d569",
+    "previous_plot_outputs": {
+      "results\\figures\\scale_analysis.png": {
+        "bytes": 196244,
+        "sha256": "d967592feaa297613efab0037b7c46d55e928b5a15c14f0c32696a1750b23f0f"
+      },
+      "results\\figures\\scale_diagnostics.png": {
+        "bytes": 93971,
+        "sha256": "ee9622d2fcf795d5b9d827c3adffb8014981f09b11562affd1913494612e8226"
+      }
+    },
+    "numerical_artifacts_unchanged": true
+  }
+}

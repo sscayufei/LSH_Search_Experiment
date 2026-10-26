@@ -1,0 +1,35 @@
+{
+  "created_utc": "2026-10-26T10:42:04.172194+00:00",
+  "config_sha256": "9505a75bc25fba8a5eebe6febc79c62e004cd0263438fde000a15764f7b61b4d",
+  "plan": {
+    "measured_sizes": [
+      10000,
+      50000,
+      100000
+    ],
+    "prediction_sizes": [
+      10000,
+      100000,
+      1000000
+    ],
+    "reference_similarities": [
+      0.0,
+      0.2
+    ],
+    "query_split": "test",
+    "query_kind": "semantic",
+    "warmup_rounds": 2,
+    "repeats": 5,
+    "threads": 1,
+    "encoding": {
+      "batch_size": 64,
+      "chunk_size": 1024,
+      "threads": 4,
+      "device": "cpu"
+    },
+    "data_output": "data/scale",
+    "new_documents": "unique_anchor_positive_union_excluding_all_query_texts",
+    "optional_improvement": "none"
+  },
+  "scope": "same 100 semantic test queries, original 10k fixed prefix; independent process for each measured size"
+}

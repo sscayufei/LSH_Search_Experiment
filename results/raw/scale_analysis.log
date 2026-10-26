@@ -1,0 +1,22 @@
+2026-10-26 18:42:04,172 INFO Launching isolated worker for N=10000
+2026-10-26 18:42:05,229 INFO N=10000: recomputing full Ground Truth for the same 100 semantic queries
+2026-10-26 18:42:05,229 INFO [worker 10000] 2026-10-26 18:42:05,229 INFO N=10000: recomputing full Ground Truth for the same 100 semantic queries
+2026-10-26 18:42:05,502 INFO N=10000: Ground Truth complete in 0.251s; building the unchanged hybrid index
+2026-10-26 18:42:05,502 INFO [worker 10000] 2026-10-26 18:42:05,502 INFO N=10000: Ground Truth complete in 0.251s; building the unchanged hybrid index
+2026-10-26 18:42:07,774 INFO Measured N=10000: mean candidates=153.07 false candidates=151.20 Recall=0.9676649958228905 time=0.4022ms index=24.079MiB
+2026-10-26 18:42:07,774 INFO [worker 10000] 2026-10-26 18:42:07,774 INFO Measured N=10000: mean candidates=153.07 false candidates=151.20 Recall=0.9676649958228905 time=0.4022ms index=24.079MiB
+2026-10-26 18:42:07,859 INFO Launching isolated worker for N=50000
+2026-10-26 18:42:09,100 INFO N=50000: recomputing full Ground Truth for the same 100 semantic queries
+2026-10-26 18:42:09,100 INFO [worker 50000] 2026-10-26 18:42:09,100 INFO N=50000: recomputing full Ground Truth for the same 100 semantic queries
+2026-10-26 18:42:10,307 INFO [worker 50000] 2026-10-26 18:42:10,307 INFO N=50000: Ground Truth complete in 1.182s; building the unchanged hybrid index
+2026-10-26 18:42:10,307 INFO N=50000: Ground Truth complete in 1.182s; building the unchanged hybrid index
+2026-10-26 18:42:18,386 INFO Measured N=50000: mean candidates=761.41 false candidates=756.09 Recall=0.9550806194467847 time=1.5651ms index=76.187MiB
+2026-10-26 18:42:18,386 INFO [worker 50000] 2026-10-26 18:42:18,386 INFO Measured N=50000: mean candidates=761.41 false candidates=756.09 Recall=0.9550806194467847 time=1.5651ms index=76.187MiB
+2026-10-26 18:42:18,508 INFO Launching isolated worker for N=100000
+2026-10-26 18:42:19,513 INFO N=100000: recomputing full Ground Truth for the same 100 semantic queries
+2026-10-26 18:42:19,513 INFO [worker 100000] 2026-10-26 18:42:19,513 INFO N=100000: recomputing full Ground Truth for the same 100 semantic queries
+2026-10-26 18:42:22,099 INFO N=100000: Ground Truth complete in 2.563s; building the unchanged hybrid index
+2026-10-26 18:42:22,099 INFO [worker 100000] 2026-10-26 18:42:22,099 INFO N=100000: Ground Truth complete in 2.563s; building the unchanged hybrid index
+2026-10-26 18:42:36,067 INFO Measured N=100000: mean candidates=1524.16 false candidates=1514.93 Recall=0.9364613276268051 time=2.5574ms index=139.005MiB
+2026-10-26 18:42:36,067 INFO [worker 100000] 2026-10-26 18:42:36,067 INFO Measured N=100000: mean candidates=1524.16 false candidates=1514.93 Recall=0.9364613276268051 time=2.5574ms index=139.005MiB
+2026-10-26 18:42:38,179 INFO Phase 6 complete: measured [10000, 50000, 100000]; million-scale rows are predictions only

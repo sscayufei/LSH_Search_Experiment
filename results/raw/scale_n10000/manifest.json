@@ -1,0 +1,58 @@
+{
+  "phase": 6,
+  "N": 10000,
+  "value_type": "measured",
+  "parameters": {
+    "tau": 0.75,
+    "k": 12,
+    "L": 32,
+    "seed": 42
+  },
+  "measurement": {
+    "warmup_rounds": 2,
+    "repeats": 5,
+    "threads": 1
+  },
+  "threadpools": [
+    {
+      "user_api": "blas",
+      "internal_api": "openblas",
+      "num_threads": 1,
+      "prefix": "libscipy_openblas",
+      "filepath": "D:\\AI_lab\\homework4\\.venv\\Lib\\site-packages\\numpy.libs\\libscipy_openblas64_-ed4f167a5330424524f45258e7ca2c8d.dll",
+      "version": "0.3.34.106.0",
+      "threading_layer": "pthreads",
+      "architecture": "Haswell"
+    }
+  ],
+  "max_vector_norm_error": 1.1920928955078125e-07,
+  "inputs": {
+    "configs\\selected_experiment.yaml": "9505a75bc25fba8a5eebe6febc79c62e004cd0263438fde000a15764f7b61b4d",
+    "configs\\scale.yaml": "5edaabd0cafac6ddcc70479e0ba73b657a960f7ffe18aabb651f137238da73bb",
+    "data\\scale\\manifest.json": "fe2d6a8820723b4c444ac94378719cd99c25d6e85a0a3b067be7f806eb221e5a",
+    "data\\processed\\test_queries.jsonl": "5f77786379da371ec480b2e49b57cc8229ff7564a930ed6ca52b36be44a7b948",
+    "data\\processed\\test_queries_embeddings.npy": "b68feeeade106fde583d56e7d1d1e1ed325eaad86a51d719a7287163da493db1"
+  },
+  "outputs": {
+    "per_query.csv": {
+      "bytes": 9338,
+      "sha256": "c365ccf857176a84e93a77e41a2195d074bc4de6716a0847adf9492f2beae2c2"
+    },
+    "timings.csv": {
+      "bytes": 27567,
+      "sha256": "3f32a529b2a65a534283865333ea519e05dc985e4c6a3438c5f665c8bad170ff"
+    },
+    "results.jsonl": {
+      "bytes": 100869,
+      "sha256": "6d2be4eeb6157102e0de407c303c139320667e6df884efd6878fa95ba34f55a8"
+    },
+    "bucket_stats.json": {
+      "bytes": 7750,
+      "sha256": "4a5751605c728e3bfb34a0803b2c49747b15fd341acc8842d6df88275629fd9a"
+    },
+    "summary.json": {
+      "bytes": 809,
+      "sha256": "96de6eb647eb07c0c92cfb75f8656ff6a744d5d2913029e74c06c9c1a14bc75e"
+    }
+  }
+}

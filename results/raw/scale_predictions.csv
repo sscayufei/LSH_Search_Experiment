@@ -1,0 +1,19 @@
+N,value_type,quantity,reference_similarity,probability_or_rate,value,units,assumption
+10000,conditional_theory,mean_false_candidates,0.0,0.007783008146109829,77.83008146109829,vectors,all background similarities equal reference_similarity; N approximates background count
+10000,conditional_theory,mean_false_candidates,0.2,0.0326887535048351,326.88753504835097,vectors,all background similarities equal reference_similarity; N approximates background count
+10000,extrapolated_from_measured_10k,mean_candidates,,0.015307,153.07,vectors,10k candidate fraction and similarity distribution remain stationary; not a measurement
+10000,extrapolated_from_measured_10k,mean_false_candidates,,0.015119999999999998,151.2,vectors,10k candidate fraction and similarity distribution remain stationary; not a measurement
+10000,arithmetic_storage_formula,float32_vector_payload,,,15360000,bytes,"dense N by d vector payload only; excludes headers, index, queries and process overhead"
+10000,arithmetic_storage_formula,float64_normalized_workspace,,,30720000,bytes,"dense N by d vector payload only; excludes headers, index, queries and process overhead"
+100000,conditional_theory,mean_false_candidates,0.0,0.007783008146109829,778.3008146109829,vectors,all background similarities equal reference_similarity; N approximates background count
+100000,conditional_theory,mean_false_candidates,0.2,0.0326887535048351,3268.87535048351,vectors,all background similarities equal reference_similarity; N approximates background count
+100000,extrapolated_from_measured_10k,mean_candidates,,0.015307,1530.7,vectors,10k candidate fraction and similarity distribution remain stationary; not a measurement
+100000,extrapolated_from_measured_10k,mean_false_candidates,,0.015119999999999998,1511.9999999999998,vectors,10k candidate fraction and similarity distribution remain stationary; not a measurement
+100000,arithmetic_storage_formula,float32_vector_payload,,,153600000,bytes,"dense N by d vector payload only; excludes headers, index, queries and process overhead"
+100000,arithmetic_storage_formula,float64_normalized_workspace,,,307200000,bytes,"dense N by d vector payload only; excludes headers, index, queries and process overhead"
+1000000,conditional_theory,mean_false_candidates,0.0,0.007783008146109829,7783.008146109829,vectors,all background similarities equal reference_similarity; N approximates background count
+1000000,conditional_theory,mean_false_candidates,0.2,0.0326887535048351,32688.7535048351,vectors,all background similarities equal reference_similarity; N approximates background count
+1000000,extrapolated_from_measured_10k,mean_candidates,,0.015307,15307.0,vectors,10k candidate fraction and similarity distribution remain stationary; not a measurement
+1000000,extrapolated_from_measured_10k,mean_false_candidates,,0.015119999999999998,15119.999999999998,vectors,10k candidate fraction and similarity distribution remain stationary; not a measurement
+1000000,arithmetic_storage_formula,float32_vector_payload,,,1536000000,bytes,"dense N by d vector payload only; excludes headers, index, queries and process overhead"
+1000000,arithmetic_storage_formula,float64_normalized_workspace,,,3072000000,bytes,"dense N by d vector payload only; excludes headers, index, queries and process overhead"
