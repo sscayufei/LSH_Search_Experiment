@@ -1,0 +1,40 @@
+{
+  "selected": {
+    "k": 12,
+    "L": 32,
+    "tau": 0.75,
+    "seed": 42,
+    "queries": 50,
+    "nonempty_ground_truth_queries": 48,
+    "empty_ground_truth_queries": 2,
+    "recall": 0.9182449494949495,
+    "mean_candidate_ratio": 0.014702000000000002,
+    "p95_candidate_ratio": 0.019384999999999996,
+    "mean_candidates": 147.02,
+    "mean_comparisons": 147.02,
+    "mean_time_ms": 1.7484720105615752,
+    "p95_time_ms": 2.5811750538802385,
+    "index_bytes": 23808284,
+    "build_seconds": 1.912682899972424,
+    "signature_build_seconds": 1.5666007000254467,
+    "id_references": 320000,
+    "theory_P_s1": 0.7582769294026666,
+    "theory_P_s0": 0.007783008146109829,
+    "pareto": true,
+    "selected": true
+  },
+  "budget_satisfied": true,
+  "measured_recall_goal_met": true,
+  "theoretical_probability_goal_met": false,
+  "policy": {
+    "max_mean_candidate_ratio": 0.05,
+    "max_p95_candidate_ratio": 0.1,
+    "max_index_bytes": 33554432,
+    "measured_recall_goal": 0.9,
+    "rule": "highest_recall_then_lowest_mean_candidate_ratio_then_lowest_L_then_lowest_k",
+    "no_feasible_rule": "pareto_minimum_normalized_budget_violation_then_highest_recall"
+  },
+  "threshold_policy_satisfied": true,
+  "recall_definition": "mean over semantic validation queries with nonempty Ground Truth; all queries retained in raw tables",
+  "memory_definition": "recursive sys.getsizeof of unique planes and bucket objects including ID/key integers and array buffers; excludes corpus working copy; not RSS"
+}

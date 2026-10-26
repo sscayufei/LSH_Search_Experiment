@@ -1,0 +1,137 @@
+{
+  "phase": 4,
+  "scope": "validation only; no test query files opened for selection",
+  "inputs": {
+    "data\\processed\\manifest.json": "53d0ee5009e02fe1f5139cbd427840dbfd1f9c5b3f889c32e0f8d7fff0d82f42",
+    "data\\processed\\corpus.jsonl": "4cd74bf9d31c66d96670e7d08ae9a87ffebc87adc40a16912edb0371218af452",
+    "data\\processed\\corpus_embeddings.npy": "dca74505f1b38659a4ee66ebcf176427d0c11879bc825ccb3a521fd4096af007",
+    "data\\processed\\validation_queries.jsonl": "7eb6f62a6e192e4b6190a05cb3e3de21a88b36ccec9816c427fdfdca3f0cb144",
+    "data\\processed\\validation_queries_embeddings.npy": "4ddd78877571173f6819e27e1239a2c09d9e40b7feed55da4e69d934f3218043",
+    "configs/experiment.yaml": "692df34adf4d4155760c9610779678ea72795d881ba07a0761c4f569684defc6",
+    "configs/phase4.yaml": "05761fe5d1b90cce2be91e53b02254808814ea0836c5c6566b9ec694b2d93853"
+  },
+  "code_sha256": {
+    "D:\\AI_lab\\homework4\\src\\tune_parameters.py": "499da0080face75c34466368921f5b5161f990ef4cade97c47f69ed6bd6fcf95",
+    "src\\metrics.py": "079b585575bf1c1aa46b8ccfad0e4f2ede3b2d0f7ec07710d33534faa31c10c8",
+    "src\\random_hyperplane_lsh.py": "0f35729dc73f75eb3129bdc280dc268b63482ed42af74294c7652a693f3e160b",
+    "src\\ground_truth.py": "4516c7645375d9c4be4839b7e336c3a7611f0d9e3a5ef540f5092f7b3a6f3d0a"
+  },
+  "python": "3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "numpy": "2.5.4",
+  "threadpools": [
+    {
+      "user_api": "blas",
+      "internal_api": "openblas",
+      "num_threads": 1,
+      "prefix": "libscipy_openblas",
+      "filepath": "D:\\AI_lab\\homework4\\.venv\\Lib\\site-packages\\numpy.libs\\libscipy_openblas64_-ed4f167a5330424524f45258e7ca2c8d.dll",
+      "version": "0.3.34.106.0",
+      "threading_layer": "pthreads",
+      "architecture": "Haswell"
+    }
+  ],
+  "measurement": {
+    "warmup_rounds": 1,
+    "repeats": 3,
+    "threads": 1
+  },
+  "selection": {
+    "selected": {
+      "k": 12,
+      "L": 32,
+      "tau": 0.75,
+      "seed": 42,
+      "queries": 50,
+      "nonempty_ground_truth_queries": 48,
+      "empty_ground_truth_queries": 2,
+      "recall": 0.9182449494949495,
+      "mean_candidate_ratio": 0.014702000000000002,
+      "p95_candidate_ratio": 0.019384999999999996,
+      "mean_candidates": 147.02,
+      "mean_comparisons": 147.02,
+      "mean_time_ms": 1.7484720105615752,
+      "p95_time_ms": 2.5811750538802385,
+      "index_bytes": 23808284,
+      "build_seconds": 1.912682899972424,
+      "signature_build_seconds": 1.5666007000254467,
+      "id_references": 320000,
+      "theory_P_s1": 0.7582769294026666,
+      "theory_P_s0": 0.007783008146109829,
+      "pareto": true,
+      "selected": true
+    },
+    "budget_satisfied": true,
+    "measured_recall_goal_met": true,
+    "theoretical_probability_goal_met": false,
+    "policy": {
+      "max_mean_candidate_ratio": 0.05,
+      "max_p95_candidate_ratio": 0.1,
+      "max_index_bytes": 33554432,
+      "measured_recall_goal": 0.9,
+      "rule": "highest_recall_then_lowest_mean_candidate_ratio_then_lowest_L_then_lowest_k",
+      "no_feasible_rule": "pareto_minimum_normalized_budget_violation_then_highest_recall"
+    },
+    "threshold_policy_satisfied": true,
+    "recall_definition": "mean over semantic validation queries with nonempty Ground Truth; all queries retained in raw tables",
+    "memory_definition": "recursive sys.getsizeof of unique planes and bucket objects including ID/key integers and array buffers; excludes corpus working copy; not RSS"
+  },
+  "outputs": {
+    "results\\raw\\parameter_selection.json": {
+      "bytes": 1545,
+      "sha256": "b0e3a995c68c439f6c438b678a9f054c5cf370cb49a8e1c516e9890b4be9c6f5"
+    },
+    "results\\raw\\phase4_plan.json": {
+      "bytes": 1208,
+      "sha256": "a8db73d2e94cfb1051de0f3fd50d7ce5c258bdb8fa42a2e42116c1e8f949a64a"
+    },
+    "results\\raw\\theory_grid.csv": {
+      "bytes": 1012,
+      "sha256": "9642510bc35caf53528af45ff543dceead0106a8fed06f26b79b8eb1e71750e8"
+    },
+    "results\\raw\\threshold_analysis.json": {
+      "bytes": 1605,
+      "sha256": "17fe6401cd78001690d8981c39e99c09d061bffcfd292aaa1a53cb882484ff5a"
+    },
+    "results\\raw\\threshold_candidates.csv": {
+      "bytes": 187,
+      "sha256": "761fbc221ef71e16cb6ab18005f2c5a5b6da16081057e86321d7d8be0bb341dd"
+    },
+    "results\\raw\\threshold_reference_pairs.csv": {
+      "bytes": 305004,
+      "sha256": "f028889a7cf80509ed3c945c5890aab83ad20b6b11ac0b017da5a8f9d8805b60"
+    },
+    "results\\raw\\validation_grid.csv": {
+      "bytes": 3064,
+      "sha256": "3282d962cb6c2cee57f59050d03df1b53240c11fe753c8f9ec7de0427e2cb093"
+    },
+    "results\\raw\\validation_ground_truth.jsonl": {
+      "bytes": 4009,
+      "sha256": "df6751e8fda7c7c6b894015263c6a550606e396c208860a6377e19c15ebcc9f3"
+    },
+    "results\\raw\\validation_per_query.csv": {
+      "bytes": 41254,
+      "sha256": "a7d525df629e912ccf7f6242c926ad065a810ed68b78135942e2bebb96e56898"
+    },
+    "results\\raw\\validation_semantic_scores.npy": {
+      "bytes": 4000128,
+      "sha256": "03f954e6a44b46fd1477b23409ddd09d8afa4b7b85442665b5cb8fd5e14c89d8"
+    },
+    "results\\raw\\validation_timings.csv": {
+      "bytes": 190843,
+      "sha256": "52a3274ce09aa27c77f4cd24bb7b518fefa94a42e661842b8e6fc31a24cccb77"
+    },
+    "results\\figures\\recall_candidate.png": {
+      "bytes": 64366,
+      "sha256": "c6ff6ed677e9b7305307c0897f0ab27c90305b1d6b0d65ffa7f4d77c70b48b99"
+    },
+    "results\\figures\\threshold_analysis.png": {
+      "bytes": 34793,
+      "sha256": "36a9a5b200e61ddf757c36d82f01134667328a4aabe7e1aa0eef788033642aaa"
+    },
+    "configs\\selected_experiment.yaml": {
+      "bytes": 1032,
+      "sha256": "9505a75bc25fba8a5eebe6febc79c62e004cd0263438fde000a15764f7b61b4d"
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "seed": 42,
+  "policy": {
+    "thresholds": [
+      0.7,
+      0.75,
+      0.8
+    ],
+    "threshold_policy": {
+      "min_source_query_coverage": 0.9,
+      "max_random_reference_exceedance": 0.01,
+      "random_references_per_query": 100,
+      "rule": "highest_feasible_tau",
+      "fallback": "highest_source_coverage_then_lowest_random_exceedance_then_highest_tau"
+    },
+    "grid": {
+      "k": [
+        8,
+        12,
+        16
+      ],
+      "L": [
+        4,
+        8,
+        16,
+        32
+      ]
+    },
+    "theory": {
+      "s0": 0.0,
+      "target_boundary_probability": 0.9
+    },
+    "selection": {
+      "max_mean_candidate_ratio": 0.05,
+      "max_p95_candidate_ratio": 0.1,
+      "max_index_bytes": 33554432,
+      "measured_recall_goal": 0.9,
+      "rule": "highest_recall_then_lowest_mean_candidate_ratio_then_lowest_L_then_lowest_k",
+      "no_feasible_rule": "pareto_minimum_normalized_budget_violation_then_highest_recall"
+    },
+    "measurement": {
+      "warmup_rounds": 1,
+      "repeats": 3,
+      "threads": 1
+    }
+  },
+  "scope": "semantic validation queries only",
+  "created_utc": "2026-10-26T09:07:14.252859+00:00"
+}

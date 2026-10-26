@@ -1,6 +1,6 @@
 # Hash + LSH 语义检索实验
 
-目前已实现 Phase 1（数据准备）、Phase 2（Exact Hash、Ground Truth）与 Phase 3（随机超平面 LSH、混合检索）。
+目前已完成 Phase 1–4：数据准备、基准、LSH，以及验证集参数选择与配置锁定。
 指导文件位于 `docs/EXPERIMENT_GUIDE.md.md`。
 
 ## Windows PowerShell 运行
@@ -159,3 +159,56 @@ theoretical_probability = candidate_probability(0.75, k=12, L=16)
 重启后集成测试会重建索引并与保存的超平面和桶逐项对照，验证每条查询满足 `R=C∩G`。
 真实 Phase 3 产物缺失时这两项集成测试明确跳过；正式验收要求通过。
 本次结果及边界测试修正记录见 `docs/PHASE3_SUMMARY.md`。
+
+## Phase 4：验证集参数选择
+
+```powershell
+.\.venv\Scripts\python.exe -m src.tune_parameters --config configs/experiment.yaml --plan configs/phase4.yaml
+.\.venv\Scripts\python.exe -m src.plot_validation_grid
+.\.venv\Scripts\python.exe -m pytest -q -p no:cacheprovider --ignore=tests/test_phase1_artifacts.py --basetemp=data/phase4-test-tmp
+```
+
+上述前两条命令已真实执行，默认拒绝覆盖已有选择结果。重现实验可指定新的
+`--results-dir` 和 `--lock-file`；绘图补充命令只针对默认 results 生成一次额外的对数横轴视图。
+先安装更新的 requirements.txt（新增 matplotlib、threadpoolctl），或使用本次 requirements-lock.txt。
+
+参数选择脚本只打开 Phase 1 manifest、历史库和验证查询文件；只使用其中 50 条语义查询。
+不调用会读取测试数据的 `verify_saved`。本阶段回归显式排除原有两项读取测试查询的 Phase 1 集成测试。
+它们在此前阶段已通过，未删除或修改；本轮不使用真实测试查询进行检索、调参或其他数据检查。
+
+预先固定的 configs/phase4.yaml 指定阈值候选、来源覆盖目标、随机参考样本数、网格和预算。
+阈值选择先于 LSH 拟合：在 {0.70,0.75,0.80} 中，选择来源配对查询覆盖率至少 90%、
+随机非来源参考对超阈值比例不超过 1% 的最高阈值。每查询随机采样 100 个非来源历史 ID，
+合计 5,000 个参考对。它们未被人工标注为无关，不能把超阈值比例称为真实误报率。
+有多个来源时按“至少一个来源达阈值”定义查询覆盖，来源对分布另报全部唯一 query/corpus 对。
+
+固定主阈值后测试 k={8,12,16}、L={4,8,16,32}。优先在平均候选率≤5%、P95≤10%、
+额外 LSH 索引估算≤32 MiB 内最大化条件 Recall，同分时选候选率更低、L 更小、k 更小者。
+规则和不可行时的显式备选规则都保存在 plan，不能看结果后改变预算。
+Recall 是非空 Ground Truth 查询的宏平均；空 Ground Truth 的 Recall 保存为空，查询本身保留。
+候选率、耗时和比较数统计全部 50 条查询。
+
+每配置热身 1 轮、测量 3 轮，限制底层线程数为 1。耗时包含预编码查询的完整 LSH API 调用，
+不包含 Embedding、独立 Ground Truth、索引构建或内存遍历。索引内存按唯一 Python 对象递归估算，
+包括超平面数组、桶字典、键、ID 元组与整数；排除历史向量工作副本，不是进程 RSS。
+
+本次锁定于 `configs/selected_experiment.yaml`：**tau=0.75、k=12、L=32、seed=42**。
+验证 Recall=0.91824495，平均候选率=1.4702%，P95=1.9385%，额外 LSH 索引估算=22.705 MiB。
+理论边界候选概率=0.75827693，未达 0.90 的理论目标；该概率和实测查询 Recall 不是同一统计量。
+以上均是验证集结果，测试集最终结果留待 Phase 5。
+
+主要产物：
+
+- `results/raw/phase4_plan.json`：实验开始时保存的策略快照。
+- `threshold_analysis.json`、`threshold_candidates.csv`、`threshold_reference_pairs.csv`：阈值依据与全部抽样对。
+- `theory_grid.csv`：理论候选概率、达到目标所需 L 与条件化无关候选数推导。
+- `validation_grid.csv`：12 组真实 Recall、候选率、耗时、比较次数、内存估算和建表时间。
+- `validation_per_query.csv`（600 行）、`validation_timings.csv`（1,800 行）：逐查询结果和全部计时样本。
+- `validation_semantic_scores.npy`、`validation_ground_truth.jsonl`：同一批验证查询的全库得分和主阈值相关集合。
+- `parameter_selection.json`、`phase4_manifest.json`：选择依据、环境/线程信息、输入/输出及代码校验和。
+- `results/figures/recall_candidate.png`、`recall_candidate_log.png`：标注所选配置的权衡图，后者放大小候选率区域。
+- `results/figures/threshold_analysis.png`：来源对与随机参考对得分分布。
+- `results/raw/phase4_plot_manifest.json`：补充对数图的独立输入、输出与代码追溯。
+
+只有配置与绘图缓存路径为输出之外的例外：锁定 YAML 位于 configs，matplotlib 缓存位于忽略的 results/.matplotlib。
+运行细节、算法复杂度、全网格结果及理论与实测差异见 `docs/PHASE4_SUMMARY.md`。

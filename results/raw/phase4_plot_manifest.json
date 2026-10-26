@@ -1,0 +1,13 @@
+{
+  "purpose": "Additional log-scale view only; measured values and frozen selection unchanged",
+  "inputs": {
+    "results\\raw\\validation_grid.csv": "3282d962cb6c2cee57f59050d03df1b53240c11fe753c8f9ec7de0427e2cb093",
+    "results\\raw\\phase4_plan.json": "a8db73d2e94cfb1051de0f3fd50d7ce5c258bdb8fa42a2e42116c1e8f949a64a",
+    "results\\raw\\phase4_manifest.json": "d793e462cd57dd6faa1c8ea8ebc0caf3fd9b3806c5295e1cc04e3c09b4f4666f"
+  },
+  "code_sha256": "6362e260a8fac7f89e58eded6b6c6990304bc44fa3f29c6d6de529a664180071",
+  "matplotlib": "3.11.2",
+  "output": {
+    "results\\figures\\recall_candidate_log.png": "f70da4019a8e7f0c7c41859f2897f28fb3b4536c3a6122b6e60e914e6c979117"
+  }
+}

@@ -1,0 +1,4 @@
+tau,source_query_coverage,random_reference_exceedance,queries,nonempty_ground_truth_queries,empty_ground_truth_queries
+0.7,0.98,0.0,50,49,1
+0.75,0.92,0.0,50,48,2
+0.8,0.76,0.0,50,41,9

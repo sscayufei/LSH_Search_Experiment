@@ -1,0 +1,35 @@
+seed: 42
+dataset:
+  name: sentence-transformers/quora-duplicates
+  config: pair
+  split: train
+  revision: 41f699770310302022a4dd75d4cf903bfef9ea46
+  corpus_size: 10000
+  validation_semantic_queries: 50
+  test_semantic_queries: 100
+  validation_exact_queries: 10
+  test_exact_queries: 20
+embedding:
+  model: sentence-transformers/all-MiniLM-L6-v2
+  revision: 1110a243fdf4706b3f48f1d95db1a4f5529b4d41
+  normalize: true
+  dtype: float32
+  dimension: 384
+  batch_size: 64
+  device: cpu
+output: data/processed
+cache: data/raw
+retrieval:
+  tau: 0.75
+  k: 12
+  L: 32
+selection:
+  phase: 4
+  split: validation
+  frozen_utc: '2026-10-26T09:07:44.910417+00:00'
+  test_evaluation_run: false
+  grid_sha256: 3282d962cb6c2cee57f59050d03df1b53240c11fe753c8f9ec7de0427e2cb093
+  threshold_analysis_sha256: 17fe6401cd78001690d8981c39e99c09d061bffcfd292aaa1a53cb882484ff5a
+  policy_sha256: 05761fe5d1b90cce2be91e53b02254808814ea0836c5c6566b9ec694b2d93853
+  budget_satisfied: true
+  validation_recall_goal_met: true

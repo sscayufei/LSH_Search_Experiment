@@ -1,0 +1,50 @@
+{"query_id": "validation-0000", "tau": 0.75, "ground_truth_ids": [5028]}
+{"query_id": "validation-0001", "tau": 0.75, "ground_truth_ids": [693, 1899, 3714, 4204, 4720, 5005, 5379, 5603, 6177, 6819, 8575]}
+{"query_id": "validation-0002", "tau": 0.75, "ground_truth_ids": [8461]}
+{"query_id": "validation-0003", "tau": 0.75, "ground_truth_ids": []}
+{"query_id": "validation-0004", "tau": 0.75, "ground_truth_ids": [5836]}
+{"query_id": "validation-0005", "tau": 0.75, "ground_truth_ids": [1606, 2301, 2816, 5402, 7463]}
+{"query_id": "validation-0006", "tau": 0.75, "ground_truth_ids": [4724]}
+{"query_id": "validation-0007", "tau": 0.75, "ground_truth_ids": []}
+{"query_id": "validation-0008", "tau": 0.75, "ground_truth_ids": [920]}
+{"query_id": "validation-0009", "tau": 0.75, "ground_truth_ids": [4019, 9483]}
+{"query_id": "validation-0010", "tau": 0.75, "ground_truth_ids": [5229]}
+{"query_id": "validation-0011", "tau": 0.75, "ground_truth_ids": [3801, 5298, 6317]}
+{"query_id": "validation-0012", "tau": 0.75, "ground_truth_ids": [5512]}
+{"query_id": "validation-0013", "tau": 0.75, "ground_truth_ids": [5707]}
+{"query_id": "validation-0014", "tau": 0.75, "ground_truth_ids": [1822]}
+{"query_id": "validation-0015", "tau": 0.75, "ground_truth_ids": [696, 1889, 1983, 5428]}
+{"query_id": "validation-0016", "tau": 0.75, "ground_truth_ids": [8843]}
+{"query_id": "validation-0017", "tau": 0.75, "ground_truth_ids": [390]}
+{"query_id": "validation-0018", "tau": 0.75, "ground_truth_ids": [9184]}
+{"query_id": "validation-0019", "tau": 0.75, "ground_truth_ids": [6975]}
+{"query_id": "validation-0020", "tau": 0.75, "ground_truth_ids": [5988, 6304, 6462]}
+{"query_id": "validation-0021", "tau": 0.75, "ground_truth_ids": [2168]}
+{"query_id": "validation-0022", "tau": 0.75, "ground_truth_ids": [948]}
+{"query_id": "validation-0023", "tau": 0.75, "ground_truth_ids": [1877]}
+{"query_id": "validation-0024", "tau": 0.75, "ground_truth_ids": [625]}
+{"query_id": "validation-0025", "tau": 0.75, "ground_truth_ids": [2608, 2734, 5212, 5270, 5592]}
+{"query_id": "validation-0026", "tau": 0.75, "ground_truth_ids": [9018]}
+{"query_id": "validation-0027", "tau": 0.75, "ground_truth_ids": [8588]}
+{"query_id": "validation-0028", "tau": 0.75, "ground_truth_ids": [758, 1503, 2068, 8098]}
+{"query_id": "validation-0029", "tau": 0.75, "ground_truth_ids": [5648]}
+{"query_id": "validation-0030", "tau": 0.75, "ground_truth_ids": [3151]}
+{"query_id": "validation-0031", "tau": 0.75, "ground_truth_ids": [46, 8627, 9575]}
+{"query_id": "validation-0032", "tau": 0.75, "ground_truth_ids": [1991, 4372, 4670]}
+{"query_id": "validation-0033", "tau": 0.75, "ground_truth_ids": [1435, 2099, 3454, 4288]}
+{"query_id": "validation-0034", "tau": 0.75, "ground_truth_ids": [3444]}
+{"query_id": "validation-0035", "tau": 0.75, "ground_truth_ids": [9332]}
+{"query_id": "validation-0036", "tau": 0.75, "ground_truth_ids": [1359, 7429]}
+{"query_id": "validation-0037", "tau": 0.75, "ground_truth_ids": [7001]}
+{"query_id": "validation-0038", "tau": 0.75, "ground_truth_ids": [425, 1316, 3833, 7165, 7354, 8628, 8815, 9277]}
+{"query_id": "validation-0039", "tau": 0.75, "ground_truth_ids": [5449, 8469]}
+{"query_id": "validation-0040", "tau": 0.75, "ground_truth_ids": [1836, 1884, 4353, 4457, 6856, 7057]}
+{"query_id": "validation-0041", "tau": 0.75, "ground_truth_ids": [6275]}
+{"query_id": "validation-0042", "tau": 0.75, "ground_truth_ids": [6400]}
+{"query_id": "validation-0043", "tau": 0.75, "ground_truth_ids": [5141]}
+{"query_id": "validation-0044", "tau": 0.75, "ground_truth_ids": [2466]}
+{"query_id": "validation-0045", "tau": 0.75, "ground_truth_ids": [7297]}
+{"query_id": "validation-0046", "tau": 0.75, "ground_truth_ids": [252, 788, 2805, 4905, 6525]}
+{"query_id": "validation-0047", "tau": 0.75, "ground_truth_ids": [4272, 5372]}
+{"query_id": "validation-0048", "tau": 0.75, "ground_truth_ids": [768]}
+{"query_id": "validation-0049", "tau": 0.75, "ground_truth_ids": [4252]}

@@ -1,0 +1,54 @@
+{
+  "threshold_rows": [
+    {
+      "tau": 0.7,
+      "source_query_coverage": 0.98,
+      "random_reference_exceedance": 0.0,
+      "queries": 50,
+      "nonempty_ground_truth_queries": 49,
+      "empty_ground_truth_queries": 1
+    },
+    {
+      "tau": 0.75,
+      "source_query_coverage": 0.92,
+      "random_reference_exceedance": 0.0,
+      "queries": 50,
+      "nonempty_ground_truth_queries": 48,
+      "empty_ground_truth_queries": 2
+    },
+    {
+      "tau": 0.8,
+      "source_query_coverage": 0.76,
+      "random_reference_exceedance": 0.0,
+      "queries": 50,
+      "nonempty_ground_truth_queries": 41,
+      "empty_ground_truth_queries": 9
+    }
+  ],
+  "selected_tau": 0.75,
+  "threshold_policy_satisfied": true,
+  "source_pair_count": 56,
+  "random_reference_count": 5000,
+  "source_pair_quantiles": {
+    "p05": 0.7280358304589934,
+    "p25": 0.8019053175615212,
+    "p50": 0.879798881304718,
+    "p75": 0.9403584072236663,
+    "p95": 0.9916045409891472
+  },
+  "source_query_max_quantiles": {
+    "p05": 0.7377395597269071,
+    "p25": 0.8045548832562018,
+    "p50": 0.8876428120697364,
+    "p75": 0.9429452212758958,
+    "p95": 0.9924224947789645
+  },
+  "random_non_source_quantiles": {
+    "p05": -0.07029469690913177,
+    "p25": -0.009380263135279787,
+    "p50": 0.03699361815339249,
+    "p75": 0.09206687216892713,
+    "p95": 0.2071370153750734
+  },
+  "interpretation": "Random non-source pairs are a reference distribution, not labeled unrelated pairs or a true false-positive rate. Quora pair labels are not cosine Ground Truth."
+}

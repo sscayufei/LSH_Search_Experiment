@@ -1,0 +1,16 @@
+2026-10-26 17:07:14,319 INFO Loaded only corpus and semantic validation data: N=10000 Q=50
+2026-10-26 17:07:14,562 INFO Selected tau=0.75 before fitting LSH; policy satisfied=True
+2026-10-26 17:07:14,720 INFO k=8 L=4 Recall=0.619145 candidate=2.0320% memory=1.521 MiB
+2026-10-26 17:07:15,031 INFO k=8 L=8 Recall=0.791351 candidate=4.2308% memory=3.035 MiB
+2026-10-26 17:07:15,641 INFO k=8 L=16 Recall=0.941856 candidate=8.3934% memory=6.064 MiB
+2026-10-26 17:07:16,723 INFO k=8 L=32 Recall=1.000000 candidate=16.1164% memory=12.120 MiB
+2026-10-26 17:07:16,870 INFO k=12 L=4 Recall=0.356155 candidate=0.1768% memory=2.834 MiB
+2026-10-26 17:07:17,703 INFO k=12 L=8 Recall=0.523848 candidate=0.3698% memory=5.676 MiB
+2026-10-26 17:07:19,329 INFO k=12 L=16 Recall=0.830224 candidate=0.7468% memory=11.340 MiB
+2026-10-26 17:07:22,613 INFO k=12 L=32 Recall=0.918245 candidate=1.4702% memory=22.705 MiB
+2026-10-26 17:07:23,305 INFO k=16 L=4 Recall=0.252904 candidate=0.0186% memory=4.806 MiB
+2026-10-26 17:07:24,472 INFO k=16 L=8 Recall=0.487405 candidate=0.0430% memory=9.604 MiB
+2026-10-26 17:07:26,586 INFO k=16 L=16 Recall=0.680429 candidate=0.0828% memory=19.179 MiB
+2026-10-26 17:07:30,757 INFO k=16 L=32 Recall=0.823658 candidate=0.1494% memory=38.409 MiB
+2026-10-26 17:07:39,215 INFO generated new fontManager
+2026-10-26 17:07:45,396 INFO Frozen parameters: tau=0.75 k=12 L=32 seed=42 budget_satisfied=True recall_goal_met=True

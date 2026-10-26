@@ -1,0 +1,5 @@
+Command: .\.venv\Scripts\python.exe -m pytest -q -p no:cacheprovider --ignore=tests/test_phase1_artifacts.py --basetemp=data/phase4-test-tmp
+Scope: validation-isolated regression; two existing Phase 1 integration tests that open real test query files were not collected.
+Exit code: 0
+Final output:
+78 passed in 27.75s
